@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Programación de cursos SENCE Enero 2026. Calendario de cursos abiertos de Calderas, Electricidad, Excel y más en Santiago.">
+    <title>Programación Mensual Enero 2026 | Selitec Capacitación</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Barra Superior -->
+    <div class="top-bar">
+        <div class="container top-bar__content">
+            <div class="top-bar__contact">
+                <a href="tel:+56222223333" aria-label="Llamar a Selitec"><i class="fas fa-phone-alt" aria-hidden="true"></i> +56 2 2222 3333</a>
+                <a href="mailto:contacto@selitec.cl" aria-label="Enviar correo a Selitec"><i class="fas fa-envelope" aria-hidden="true"></i> contacto@selitec.cl</a>
+            </div>
+            <div class="top-bar__trust">
+                <span class="trust-badge"><i class="fas fa-check-circle" aria-hidden="true"></i> Certificación NCh 2728</span>
+                <span class="trust-badge"><i class="fas fa-certificate" aria-hidden="true"></i> Organismo Técnico SENCE</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <div class="site-logo">
+                <a href="../" aria-label="Volver al inicio">
+                    <span class="site-logo__text">SELITEC</span>
+                </a>
+            </div>
+
+            <button class="mobile-menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-nav">
+                <span class="hamburger-icon"></span>
+            </button>
+
+            <nav id="main-nav" class="main-nav">
+                <ul class="main-nav__list">
+                    <li><a href="../" class="main-nav__link">Inicio</a></li>
+                    <li><a href="../cursos/" class="main-nav__link">Cursos</a></li>
+                    <li><a href="./" class="main-nav__link" aria-current="page">Programación Mensual</a></li>
+                    <li><a href="../nivelacion/" class="main-nav__link">Nivelación de Estudios</a></li>
+                    <li><a href="../empresa/" class="main-nav__link">Empresa</a></li>
+                    <li><a href="../contacto/" class="main-nav__link">Contacto</a></li>
+                    <li><a href="../elearning/" class="main-nav__link main-nav__link--highlight">Aula Virtual</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-header__title">Programación de Cursos Abiertos</h1>
+                <p class="page-header__subtitle">Calendario de actividades confirmadas para <strong>Enero 2026</strong>. Cupos limitados.</p>
+                
+                <div class="page-header__actions">
+                    <a href="#" class="btn btn--outline"><i class="fas fa-file-pdf" aria-hidden="true"></i> Descargar PDF (Opcional)</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schedule Content -->
+        <section class="section schedule-section">
+            <div class="container">
+                
+                <!-- Month Selector (Simple Navigation) -->
+                <div class="month-nav">
+                    <a href="#" class="month-nav__link disabled"><i class="fas fa-chevron-left"></i> Diciembre 2025</a>
+                    <span class="month-nav__current">Enero 2026</span>
+                    <a href="#" class="month-nav__link">Febrero 2026 <i class="fas fa-chevron-right"></i></a>
+                </div>
+
+                <!-- Responsive Table -->
+                <div class="table-responsive">
+                    <table class="schedule-table">
+                        <caption>Programación de cursos presenciales y e-learning para Enero 2026</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Curso</th>
+                                <th scope="col">Modalidad</th>
+                                <th scope="col">Fecha Inicio</th>
+                                <th scope="col">Horario</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Curso">
+                                    <strong><a href="../curso/operacion-calderas/">Operación de Calderas y Autoclaves</a></strong>
+                                    <br><small>Código SENCE: 1234567890</small>
+                                </td>
+                                <td data-label="Modalidad"><span class="badge badge--technical">Presencial</span></td>
+                                <td data-label="Fecha Inicio">05 Ene 2026</td>
+                                <td data-label="Horario">09:00 - 13:00</td>
+                                <td data-label="Estado"><span class="status-dot status-dot--green"></span> Confirmado</td>
+                                <td data-label="Acción"><a href="../contacto/" class="btn btn--sm btn--primary">Inscribir</a></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Curso">
+                                    <strong><a href="../curso/excel-intermedio/">Excel Intermedio para Gestión</a></strong>
+                                    <br><small>Código SENCE: 0987654321</small>
+                                </td>
+                                <td data-label="Modalidad"><span class="badge badge--office">E-learning</span></td>
+                                <td data-label="Fecha Inicio">12 Ene 2026</td>
+                                <td data-label="Horario">Asincrónico</td>
+                                <td data-label="Estado"><span class="status-dot status-dot--green"></span> Confirmado</td>
+                                <td data-label="Acción"><a href="../contacto/" class="btn btn--sm btn--primary">Inscribir</a></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Curso">
+                                    <strong><a href="../curso/liderazgo-equipos/">Liderazgo Efectivo</a></strong>
+                                    <br><small>Código SENCE: 1122334455</small>
+                                </td>
+                                <td data-label="Modalidad"><span class="badge badge--soft">Presencial</span></td>
+                                <td data-label="Fecha Inicio">19 Ene 2026</td>
+                                <td data-label="Horario">14:00 - 18:00</td>
+                                <td data-label="Estado"><span class="status-dot status-dot--yellow"></span> Últimos Cupos</td>
+                                <td data-label="Acción"><a href="../contacto/" class="btn btn--sm btn--primary">Inscribir</a></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Curso">
+                                    <strong><a href="../curso/electricidad-basica/">Electricidad Industrial Básica</a></strong>
+                                    <br><small>Código SENCE: 5544332211</small>
+                                </td>
+                                <td data-label="Modalidad"><span class="badge badge--technical">Presencial</span></td>
+                                <td data-label="Fecha Inicio">26 Ene 2026</td>
+                                <td data-label="Horario">09:00 - 18:00</td>
+                                <td data-label="Estado"><span class="status-dot status-dot--green"></span> Confirmado</td>
+                                <td data-label="Acción"><a href="../contacto/" class="btn btn--sm btn--primary">Inscribir</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="schedule-note">
+                    <p><i class="fas fa-info-circle"></i> * Las fechas pueden sufrir modificaciones. Se requiere un quórum mínimo para iniciar los cursos presenciales.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA Block -->
+        <section class="section bg-light text-center">
+            <div class="container">
+                <h2 class="section-title">¿No encuentra la fecha que necesita?</h2>
+                <p class="section-subtitle">Podemos coordinar cursos cerrados (In Company) para su empresa en la fecha que más le acomode.</p>
+                <a href="../contacto/" class="btn btn--secondary">Solicitar Curso Cerrado</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <div class="footer-col">
+                <h3 class="footer-title">Selitec Capacitación</h3>
+                <p>Organismo Técnico de Capacitación (OTEC) reconocido por SENCE. Certificación de Calidad NCh 2728.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title">Contacto</h3>
+                <ul class="contact-list">
+                    <li><i class="fas fa-phone" aria-hidden="true"></i> +56 2 2222 3333</li>
+                    <li><i class="fas fa-envelope" aria-hidden="true"></i> contacto@selitec.cl</li>
+                </ul>
+            </div>
+        </div>
+        <div class="site-footer__bottom">
+            <div class="container">
+                <p>&copy; 2025 Selitec Capacitación Limitada.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../app.js"></script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Selitec: OTEC con 22 años de experiencia en capacitación técnica, nivelación de estudios y cursos con franquicia SENCE en Chile. Mantención, operación de calderas, electricidad y más.">
+    <title>Selitec | Capacitación Técnica y Nivelación de Estudios SENCE</title>
+    
+    <!-- Preconnect para fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Barra Superior: Contacto y Confianza -->
+    <div class="top-bar">
+        <div class="container top-bar__content">
+            <div class="top-bar__contact">
+                <a href="tel:+56222223333" aria-label="Llamar a Selitec"><i class="fas fa-phone-alt" aria-hidden="true"></i> +56 2 2222 3333</a>
+                <a href="mailto:contacto@selitec.cl" aria-label="Enviar correo a Selitec"><i class="fas fa-envelope" aria-hidden="true"></i> contacto@selitec.cl</a>
+            </div>
+            <div class="top-bar__trust">
+                <span class="trust-badge"><i class="fas fa-check-circle" aria-hidden="true"></i> Certificación NCh 2728</span>
+                <span class="trust-badge"><i class="fas fa-certificate" aria-hidden="true"></i> Organismo Técnico SENCE</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cabecera Principal -->
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <div class="site-logo">
+                <!-- Logo como texto por ahora, reemplazable por <img> con alt adecuado -->
+                <a href="./" aria-label="Volver al inicio">
+                    <span class="site-logo__text">SELITEC</span>
+                </a>
+            </div>
+
+            <button class="mobile-menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-nav">
+                <span class="hamburger-icon"></span>
+            </button>
+
+            <nav id="main-nav" class="main-nav">
+                <ul class="main-nav__list">
+                    <li><a href="./" class="main-nav__link" aria-current="page">Inicio</a></li>
+                    <li><a href="cursos/" class="main-nav__link">Cursos</a></li>
+                    <li><a href="programacion/" class="main-nav__link">Programación Mensual</a></li>
+                    <li><a href="nivelacion/" class="main-nav__link">Nivelación de Estudios</a></li>
+                    <li><a href="empresa/" class="main-nav__link">Empresa</a></li>
+                    <li><a href="contacto/" class="main-nav__link">Contacto</a></li>
+                    <li><a href="elearning/" class="main-nav__link main-nav__link--highlight">Aula Virtual</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section: Propuesta de Valor -->
+        <section class="hero">
+            <div class="container hero__content">
+                <h1 class="hero__title">Capacitación Técnica y Nivelación de Estudios para el Trabajador Chileno</h1>
+                <p class="hero__subtitle">Más de 20 años formando especialistas en Mantención, Operaciones y Seguridad Industrial. Aprovecha tu franquicia SENCE.</p>
+                
+                <div class="hero__actions">
+                    <a href="cursos/" class="btn btn--primary">Ver Cursos Disponibles</a>
+                    <a href="programacion/" class="btn btn--secondary">Ver Programación del Mes</a>
+                </div>
+                
+                <div class="hero__trust-badges">
+                    <span><i class="fas fa-user-graduate" aria-hidden="true"></i> +10.000 Alumnos Certificados</span>
+                    <span><i class="fas fa-building" aria-hidden="true"></i> Cobertura Nacional</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accesos Rápidos a Categorías -->
+        <section class="section categories-section">
+            <div class="container">
+                <h2 class="section-title">Áreas de Capacitación</h2>
+                <p class="section-subtitle">Encuentra el curso específico para tu sector industrial o administrativo.</p>
+                
+                <div class="categories-grid">
+                    <a href="cursos/mantencion-produccion/" class="category-card">
+                        <div class="category-card__icon"><i class="fas fa-cogs" aria-hidden="true"></i></div>
+                        <h3 class="category-card__title">Mantención y Producción</h3>
+                        <p class="category-card__desc">Calderas, Electricidad, Hidráulica.</p>
+                    </a>
+                    
+                    <a href="cursos/computacion/" class="category-card">
+                        <div class="category-card__icon"><i class="fas fa-laptop-code" aria-hidden="true"></i></div>
+                        <h3 class="category-card__title">Computación</h3>
+                        <p class="category-card__desc">Excel, Word, Herramientas Digitales.</p>
+                    </a>
+                    
+                    <a href="cursos/habilidades-blandas/" class="category-card">
+                        <div class="category-card__icon"><i class="fas fa-users" aria-hidden="true"></i></div>
+                        <h3 class="category-card__title">Habilidades Blandas</h3>
+                        <p class="category-card__desc">Liderazgo, Trabajo en Equipo.</p>
+                    </a>
+                    
+                    <a href="cursos/idiomas/" class="category-card">
+                        <div class="category-card__icon"><i class="fas fa-language" aria-hidden="true"></i></div>
+                        <h3 class="category-card__title">Idiomas</h3>
+                        <p class="category-card__desc">Inglés Técnico y Comunicacional.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bloque de Nivelación de Estudios (Diferenciador Clave) -->
+        <section class="section leveling-section">
+            <div class="container leveling-section__inner">
+                <div class="leveling-section__content">
+                    <h2 class="section-title section-title--light">Nivelación de Estudios para Adultos</h2>
+                    <p>Complete su Enseñanza Básica y Media con horarios flexibles y apoyo docente. Programa reconocido por MINEDUC y financiable vía SENCE.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Modalidad flexible compatible con el trabajo</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Exámenes válidos ante el Ministerio de Educación</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Material de estudio incluido</li>
+                    </ul>
+                    <a href="nivelacion/" class="btn btn--accent">Más información sobre Nivelación</a>
+                </div>
+                <!-- Imagen decorativa o ilustrativa podría ir aquí vía CSS o img tag -->
+            </div>
+        </section>
+
+        <!-- Cursos Destacados / Próximos Inicios -->
+        <section class="section featured-courses">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Cursos Destacados</h2>
+                    <a href="programacion/" class="link-arrow">Ver calendario completo <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+
+                <div class="courses-grid">
+                    <!-- Card Curso 1 -->
+                    <article class="course-card">
+                        <div class="course-card__header">
+                            <span class="badge badge--technical">Técnico</span>
+                            <span class="badge badge--modality">Presencial</span>
+                        </div>
+                        <div class="course-card__body">
+                            <h3 class="course-card__title"><a href="curso/operacion-calderas/">Operación de Calderas y Autoclaves (Decreto 10)</a></h3>
+                            <p class="course-card__excerpt">Prepárese para el examen de certificación de la Seremi de Salud. Normativa vigente y operación segura.</p>
+                            <ul class="course-card__meta">
+                                <li><i class="far fa-clock" aria-hidden="true"></i> 40 Horas</li>
+                                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Santiago</li>
+                            </ul>
+                        </div>
+                        <div class="course-card__footer">
+                            <a href="curso/operacion-calderas/" class="btn btn--outline btn--full">Ver Temario</a>
+                        </div>
+                    </article>
+
+                    <!-- Card Curso 2 -->
+                    <article class="course-card">
+                        <div class="course-card__header">
+                            <span class="badge badge--office">Computación</span>
+                            <span class="badge badge--modality">E-learning</span>
+                        </div>
+                        <div class="course-card__body">
+                            <h3 class="course-card__title"><a href="curso/excel-intermedio/">Microsoft Excel Intermedio para Gestión</a></h3>
+                            <p class="course-card__excerpt">Domine tablas dinámicas, funciones lógicas y gestión de bases de datos para optimizar su trabajo administrativo.</p>
+                            <ul class="course-card__meta">
+                                <li><i class="far fa-clock" aria-hidden="true"></i> 24 Horas</li>
+                                <li><i class="fas fa-laptop" aria-hidden="true"></i> Online Asincrónico</li>
+                            </ul>
+                        </div>
+                        <div class="course-card__footer">
+                            <a href="curso/excel-intermedio/" class="btn btn--outline btn--full">Ver Temario</a>
+                        </div>
+                    </article>
+
+                    <!-- Card Curso 3 -->
+                    <article class="course-card">
+                        <div class="course-card__header">
+                            <span class="badge badge--soft">Habilidades</span>
+                            <span class="badge badge--modality">Presencial</span>
+                        </div>
+                        <div class="course-card__body">
+                            <h3 class="course-card__title"><a href="curso/liderazgo-equipos/">Liderazgo Efectivo y Trabajo en Equipo</a></h3>
+                            <p class="course-card__excerpt">Herramientas prácticas para supervisores y jefaturas. Mejore la comunicación y productividad de su área.</p>
+                            <ul class="course-card__meta">
+                                <li><i class="far fa-clock" aria-hidden="true"></i> 16 Horas</li>
+                                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> In Company</li>
+                            </ul>
+                        </div>
+                        <div class="course-card__footer">
+                            <a href="curso/liderazgo-equipos/" class="btn btn--outline btn--full">Ver Temario</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bloque de Confianza / Clientes -->
+        <section class="section trust-section">
+            <div class="container">
+                <h2 class="section-title text-center">Empresas que confían en Selitec</h2>
+                <div class="clients-grid">
+                    <!-- Logos de clientes (placeholders con texto por accesibilidad si no hay img real aun) -->
+                    <div class="client-logo" title="Cliente Industrial">Empresa 1</div>
+                    <div class="client-logo" title="Cliente Minería">Empresa 2</div>
+                    <div class="client-logo" title="Cliente Servicios">Empresa 3</div>
+                    <div class="client-logo" title="Cliente Retail">Empresa 4</div>
+                    <div class="client-logo" title="Cliente Público">Empresa 5</div>
+                </div>
+                <div class="trust-cta">
+                    <p>¿Necesita capacitar a su equipo? Cotice cursos cerrados (In Company) con código SENCE.</p>
+                    <a href="contacto/" class="btn btn--primary">Solicitar Cotización Empresas</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <div class="footer-col">
+                <h3 class="footer-title">Selitec Capacitación</h3>
+                <p>Organismo Técnico de Capacitación (OTEC) reconocido por SENCE. Certificación de Calidad NCh 2728.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3 class="footer-title">Enlaces Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="cursos/">Catálogo de Cursos</a></li>
+                    <li><a href="programacion/">Programación Mensual</a></li>
+                    <li><a href="nivelacion/">Nivelación de Estudios</a></li>
+                    <li><a href="elearning/">Plataforma E-learning</a></li>
+                    <li><a href="politicas/">Políticas de Privacidad</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3 class="footer-title">Contacto</h3>
+                <ul class="contact-list">
+                    <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Dirección Comercial, Santiago, Chile</li>
+                    <li><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+56222223333">+56 2 2222 3333</a></li>
+                    <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:contacto@selitec.cl">contacto@selitec.cl</a></li>
+                    <li><i class="fab fa-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/56912345678">WhatsApp Ventas</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="site-footer__bottom">
+            <div class="container">
+                <p>&copy; 2025 Selitec Capacitación Limitada. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FontAwesome para íconos (CDN por ahora, luego se puede optimizar) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>

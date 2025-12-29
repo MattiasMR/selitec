@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo de cursos técnicos SENCE en Selitec. Filtra por área: Mantención, Computación, Habilidades Blandas. Modalidad Presencial y E-learning.">
+    <title>Catálogo de Cursos | Selitec Capacitación</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Barra Superior -->
+    <div class="top-bar">
+        <div class="container top-bar__content">
+            <div class="top-bar__contact">
+                <a href="tel:+56222223333" aria-label="Llamar a Selitec"><i class="fas fa-phone-alt" aria-hidden="true"></i> +56 2 2222 3333</a>
+                <a href="mailto:contacto@selitec.cl" aria-label="Enviar correo a Selitec"><i class="fas fa-envelope" aria-hidden="true"></i> contacto@selitec.cl</a>
+            </div>
+            <div class="top-bar__trust">
+                <span class="trust-badge"><i class="fas fa-check-circle" aria-hidden="true"></i> Certificación NCh 2728</span>
+                <span class="trust-badge"><i class="fas fa-certificate" aria-hidden="true"></i> Organismo Técnico SENCE</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <div class="site-logo">
+                <a href="../" aria-label="Volver al inicio">
+                    <span class="site-logo__text">SELITEC</span>
+                </a>
+            </div>
+
+            <button class="mobile-menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-nav">
+                <span class="hamburger-icon"></span>
+            </button>
+
+            <nav id="main-nav" class="main-nav">
+                <ul class="main-nav__list">
+                    <li><a href="../" class="main-nav__link">Inicio</a></li>
+                    <li><a href="./" class="main-nav__link" aria-current="page">Cursos</a></li>
+                    <li><a href="../programacion/" class="main-nav__link">Programación Mensual</a></li>
+                    <li><a href="../nivelacion/" class="main-nav__link">Nivelación de Estudios</a></li>
+                    <li><a href="../empresa/" class="main-nav__link">Empresa</a></li>
+                    <li><a href="../contacto/" class="main-nav__link">Contacto</a></li>
+                    <li><a href="../elearning/" class="main-nav__link main-nav__link--highlight">Aula Virtual</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-header__title">Catálogo de Cursos</h1>
+                <p class="page-header__subtitle">Explore nuestra oferta de capacitación técnica y habilidades transversales.</p>
+            </div>
+        </section>
+
+        <!-- Catalog Layout -->
+        <div class="container catalog-layout">
+            
+            <!-- Sidebar Filters -->
+            <aside class="catalog-sidebar">
+                <div class="filter-group">
+                    <h3 class="filter-title">Buscar</h3>
+                    <div class="search-box">
+                        <input type="text" id="course-search" placeholder="Ej: Calderas, Excel..." aria-label="Buscar curso">
+                        <button aria-label="Buscar"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h3 class="filter-title">Categoría</h3>
+                    <ul class="filter-list" id="category-filters">
+                        <li>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="mantencion" checked>
+                                <span class="checkbox-custom"></span>
+                                Mantención y Producción
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="computacion" checked>
+                                <span class="checkbox-custom"></span>
+                                Computación
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="habilidades" checked>
+                                <span class="checkbox-custom"></span>
+                                Habilidades Blandas
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="idiomas" checked>
+                                <span class="checkbox-custom"></span>
+                                Idiomas
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="filter-group">
+                    <h3 class="filter-title">Modalidad</h3>
+                    <ul class="filter-list" id="modality-filters">
+                        <li>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="presencial" checked>
+                                <span class="checkbox-custom"></span>
+                                Presencial
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="elearning" checked>
+                                <span class="checkbox-custom"></span>
+                                E-learning
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Course Grid -->
+            <section class="catalog-content">
+                <div class="catalog-status" aria-live="polite">
+                    Mostrando <span id="result-count">0</span> cursos disponibles
+                </div>
+                
+                <div id="courses-grid" class="courses-grid">
+                    <!-- Los cursos se renderizarán aquí vía JS -->
+                    <div class="loading-spinner">Cargando cursos...</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- FAQ Section (Accordion Demo) -->
+        <section class="section faq-section">
+            <div class="container">
+                <h2 class="section-title text-center">Preguntas Frecuentes</h2>
+                <div class="accordion" id="faq-accordion">
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="faq1">
+                            <span class="accordion-title">¿Los cursos tienen código SENCE?</span>
+                            <span class="accordion-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div id="faq1" class="accordion-content" hidden>
+                            <div class="accordion-body">
+                                <p>Sí, la mayoría de nuestros cursos técnicos y de habilidades blandas cuentan con código SENCE vigente, lo que permite a las empresas utilizar su franquicia tributaria para financiar la capacitación.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="faq2">
+                            <span class="accordion-title">¿Cómo me inscribo en un curso?</span>
+                            <span class="accordion-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div id="faq2" class="accordion-content" hidden>
+                            <div class="accordion-body">
+                                <p>Puede inscribirse contactándonos directamente a través de nuestro formulario web, llamando al +56 2 2222 3333 o escribiendo a nuestro WhatsApp. Si es empresa, solicitaremos la orden de compra o ficha de inscripción SENCE.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="faq3">
+                            <span class="accordion-title">¿Entregan certificado al finalizar?</span>
+                            <span class="accordion-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div id="faq3" class="accordion-content" hidden>
+                            <div class="accordion-body">
+                                <p>Sí, todos los participantes que cumplan con los requisitos de asistencia (75%) y evaluación reciben un certificado oficial de Selitec, válido para acreditar competencias laborales.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <div class="footer-col">
+                <h3 class="footer-title">Selitec Capacitación</h3>
+                <p>Organismo Técnico de Capacitación (OTEC) reconocido por SENCE. Certificación de Calidad NCh 2728.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title">Contacto</h3>
+                <ul class="contact-list">
+                    <li><i class="fas fa-phone" aria-hidden="true"></i> +56 2 2222 3333</li>
+                    <li><i class="fas fa-envelope" aria-hidden="true"></i> contacto@selitec.cl</li>
+                </ul>
+            </div>
+        </div>
+        <div class="site-footer__bottom">
+            <div class="container">
+                <p>&copy; 2025 Selitec Capacitación Limitada.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../app.js"></script>
+</body>
+</html>
