@@ -84,8 +84,8 @@
                             <li>Superación personal y ejemplo familiar.</li>
                         </ul>
                     </div>
-                    <div style="background: #f0f0f0; height: 300px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center;">
-                        <span style="color: #999; font-size: 1.2rem;"><i class="fas fa-graduation-cap"></i> Imagen Estudiantes Adultos</span>
+                    <div style="height: 300px; border-radius: var(--radius-md); overflow: hidden;">
+                        <img src="../assets/nivelacion.jpg" alt="Estudiantes Adultos" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                 </div>
             </div>
@@ -124,38 +124,38 @@
             <div class="container" style="max-width: 800px;">
                 <h2 class="section-title text-center">Preguntas Frecuentes</h2>
                 
-                <div class="accordion">
-                    <div class="accordion__item">
-                        <button class="accordion__header" aria-expanded="false">
-                            ¿Cuánto dura el proceso?
-                            <span class="accordion__icon"><i class="fas fa-chevron-down"></i></span>
+                <div class="accordion" id="faq-accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="faq1">
+                            <span class="accordion-title">¿Cuánto dura el proceso?</span>
+                            <span class="accordion-icon"><i class="fas fa-chevron-down"></i></span>
                         </button>
-                        <div class="accordion__content">
-                            <div class="accordion__body">
+                        <div id="faq1" class="accordion-content" hidden>
+                            <div class="accordion-body">
                                 <p>La duración depende de la modalidad y de cuántos cursos necesites nivelar. Generalmente, los ciclos de preparación duran entre 3 a 5 meses antes de la fecha de examen.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="accordion__item">
-                        <button class="accordion__header" aria-expanded="false">
-                            ¿Qué documentos necesito?
-                            <span class="accordion__icon"><i class="fas fa-chevron-down"></i></span>
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="faq2">
+                            <span class="accordion-title">¿Qué documentos necesito?</span>
+                            <span class="accordion-icon"><i class="fas fa-chevron-down"></i></span>
                         </button>
-                        <div class="accordion__content">
-                            <div class="accordion__body">
+                        <div id="faq2" class="accordion-content" hidden>
+                            <div class="accordion-body">
                                 <p>Necesitas el Certificado de Estudios del último curso aprobado (original) y una fotocopia de tu Cédula de Identidad por ambos lados.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="accordion__item">
-                        <button class="accordion__header" aria-expanded="false">
-                            ¿Tiene costo?
-                            <span class="accordion__icon"><i class="fas fa-chevron-down"></i></span>
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="faq3">
+                            <span class="accordion-title">¿Tiene costo?</span>
+                            <span class="accordion-icon"><i class="fas fa-chevron-down"></i></span>
                         </button>
-                        <div class="accordion__content">
-                            <div class="accordion__body">
+                        <div id="faq3" class="accordion-content" hidden>
+                            <div class="accordion-body">
                                 <p>El programa puede ser gratuito si cumples con ciertos requisitos socioeconómicos o si accedes a través de becas laborales. Contáctanos para evaluar tu caso.</p>
                             </div>
                         </div>

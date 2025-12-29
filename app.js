@@ -186,5 +186,30 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCourses(coursesData);
     }
 
+    /* =========================================
+       5. CONTACT FORM (Mailto Fallback)
+       ========================================= */
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            const mailtoLink = `mailto:contacto@selitec.cl?subject=Contacto Web: ${subject}&body=Nombre: ${name}%0D%0AEmail: ${email}%0D%0ATeléfono: ${phone}%0D%0A%0D%0AMensaje:%0D%0A${message}`;
+            
+            window.location.href = mailtoLink;
+            
+            
+            alert('Se abrirá su cliente de correo para enviar el mensaje.');
+            contactForm.reset();
+        });
+    }
+
     console.log('Selitec App Initialized - Filters & Accordions Ready');
 });
