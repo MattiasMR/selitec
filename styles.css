@@ -149,6 +149,17 @@ ul {
     background-color: #1a1744; /* Darker primary */
 }
 
+.btn--whatsapp {
+    background-color: #25D366;
+    color: white;
+    border-color: #25D366;
+}
+
+.btn--whatsapp:hover {
+    background-color: #128C7E;
+    border-color: #128C7E;
+}
+
 .btn--secondary {
     background-color: var(--c-accent);
     color: white;
@@ -1107,11 +1118,17 @@ ul {
 /* Client Grid */
 .client-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     align-items: center;
     justify-items: center;
     margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .client-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 .client-grid img {
@@ -1142,6 +1159,7 @@ ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 2rem; /* Added padding */
 }
 
 .area-card--bg::before {

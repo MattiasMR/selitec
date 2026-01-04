@@ -189,8 +189,23 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('#category-filters input').forEach(cb => cb.addEventListener('change', filterCourses));
         document.querySelectorAll('#modality-filters input').forEach(cb => cb.addEventListener('change', filterCourses));
 
-        // Initial Render
-        renderCourses(coursesData);
+        // Check URL params for filters
+        const urlParams = new URLSearchParams(window.location.search);
+        const categoryParam = urlParams.get('category');
+
+        if (categoryParam) {
+            // Uncheck all categories first
+            document.querySelectorAll('#category-filters input').forEach(cb => cb.checked = false);
+            
+            // Check the requested category
+            const targetCheckbox = document.querySelector(`#category-filters input[value="${categoryParam}"]`);
+            if (targetCheckbox) {
+                targetCheckbox.checked = true;
+            }
+        }
+
+        // Initial Render (will use the checked state we just set)
+        filterCourses();
     }
 
     /* =========================================
