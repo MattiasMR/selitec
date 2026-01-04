@@ -64,7 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 modality: "presencial",
                 hours: 40,
                 desc: "Curso habilitante para examen Seremi de Salud. Decreto 10.",
-                slug: "operacion-calderas"
+                slug: "operacion-calderas",
+                image: "../assets/temario_mantencionYproduccion.jpg"
             },
             {
                 id: 2,
@@ -73,7 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 modality: "elearning",
                 hours: 24,
                 desc: "Tablas dinámicas, funciones lógicas y gestión de datos.",
-                slug: "excel-intermedio"
+                slug: "excel-intermedio",
+                image: "../assets/temario_computacion.jpg"
             },
             {
                 id: 3,
@@ -82,7 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 modality: "presencial",
                 hours: 16,
                 desc: "Mejore la comunicación y productividad de su equipo.",
-                slug: "liderazgo-equipos"
+                slug: "liderazgo-equipos",
+                image: "../assets/temario_habilidadesblandas.jpg"
             },
             {
                 id: 4,
@@ -91,7 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 modality: "elearning",
                 hours: 30,
                 desc: "Vocabulario técnico específico para manuales y procedimientos.",
-                slug: "ingles-tecnico"
+                slug: "ingles-tecnico",
+                image: "../assets/temario_idiomas.jpg"
             },
             {
                 id: 5,
@@ -100,7 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 modality: "presencial",
                 hours: 40,
                 desc: "Fundamentos de circuitos, seguridad y mediciones.",
-                slug: "electricidad-basica"
+                slug: "electricidad-basica",
+                image: "../assets/temario_mantencionYproduccion.jpg"
             },
             {
                 id: 6,
@@ -109,7 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 modality: "elearning",
                 hours: 20,
                 desc: "Estrategias modernas para cerrar negocios B2B.",
-                slug: "ventas-consultivas"
+                slug: "ventas-consultivas",
+                image: "../assets/temario_habilidadesblandas.jpg"
             }
         ];
 
@@ -135,6 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (course.category === 'habilidades') badgeClass = 'badge--soft';
                 
                 card.innerHTML = `
+                    <img src="${course.image}" alt="${course.title}" class="course-card__image">
                     <div class="course-card__header">
                         <span class="badge ${badgeClass}">${course.category}</span>
                         <span class="badge badge--modality">${course.modality}</span>

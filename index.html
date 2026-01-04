@@ -26,7 +26,7 @@
             </div>
             <div class="top-bar__trust">
                 <span class="trust-badge"><i class="fas fa-check-circle" aria-hidden="true"></i> Certificación NCh 2728</span>
-                <span class="trust-badge"><i class="fas fa-certificate" aria-hidden="true"></i> Organismo Técnico SENCE</span>
+                <span class="trust-badge"><i class="fas fa-certificate" aria-hidden="true"></i> Certificado por Sence</span>
             </div>
         </div>
     </div>
@@ -35,9 +35,8 @@
     <header class="site-header">
         <div class="container site-header__inner">
             <div class="site-logo">
-                <!-- Logo como texto por ahora, reemplazable por <img> con alt adecuado -->
                 <a href="./" aria-label="Volver al inicio">
-                    <span class="site-logo__text">SELITEC</span>
+                    <img src="assets/logo oficial.jpg" alt="SELITEC" class="site-logo__img">
                 </a>
             </div>
 
@@ -53,7 +52,7 @@
                     <li><a href="nivelacion/" class="main-nav__link">Nivelación de Estudios</a></li>
                     <li><a href="empresa/" class="main-nav__link">Empresa</a></li>
                     <li><a href="contacto/" class="main-nav__link">Contacto</a></li>
-                    <li><a href="elearning/" class="main-nav__link main-nav__link--highlight">Aula Virtual</a></li>
+                    <li><a href="https://www.selitec.cl/elearning" class="main-nav__link main-nav__link--highlight">Aula Virtual</a></li>
                 </ul>
             </nav>
         </div>
@@ -104,28 +103,28 @@
                 <p class="section-subtitle">Encuentra el curso específico para tu sector industrial o administrativo.</p>
                 
                 <div class="categories-grid">
-                    <a href="cursos/mantencion-produccion/" class="category-card">
-                        <div class="category-card__icon"><i class="fas fa-cogs" aria-hidden="true"></i></div>
-                        <h3 class="category-card__title">Mantención y Producción</h3>
-                        <p class="category-card__desc">Calderas, Electricidad, Hidráulica.</p>
+                    <a href="cursos/mantencion-produccion/" class="area-card--bg" style="background-image: url('assets/temario_mantencionYproduccion.jpg');">
+                        <div class="area-icon"><i class="fas fa-cogs" aria-hidden="true"></i></div>
+                        <h3 class="area-title">Mantención y Producción</h3>
+                        <p class="area-desc">Calderas, Electricidad, Hidráulica.</p>
                     </a>
                     
-                    <a href="cursos/computacion/" class="category-card">
-                        <div class="category-card__icon"><i class="fas fa-laptop-code" aria-hidden="true"></i></div>
-                        <h3 class="category-card__title">Computación</h3>
-                        <p class="category-card__desc">Excel, Word, Herramientas Digitales.</p>
+                    <a href="cursos/computacion/" class="area-card--bg" style="background-image: url('assets/temario_computacion.jpg');">
+                        <div class="area-icon"><i class="fas fa-laptop-code" aria-hidden="true"></i></div>
+                        <h3 class="area-title">Computación</h3>
+                        <p class="area-desc">Excel, Word, Herramientas Digitales.</p>
                     </a>
                     
-                    <a href="cursos/habilidades-blandas/" class="category-card">
-                        <div class="category-card__icon"><i class="fas fa-users" aria-hidden="true"></i></div>
-                        <h3 class="category-card__title">Habilidades Blandas</h3>
-                        <p class="category-card__desc">Liderazgo, Trabajo en Equipo.</p>
+                    <a href="cursos/habilidades-blandas/" class="area-card--bg" style="background-image: url('assets/temario_habilidadesblandas.jpg');">
+                        <div class="area-icon"><i class="fas fa-users" aria-hidden="true"></i></div>
+                        <h3 class="area-title">Habilidades Blandas</h3>
+                        <p class="area-desc">Liderazgo, Trabajo en Equipo.</p>
                     </a>
                     
-                    <a href="cursos/idiomas/" class="category-card">
-                        <div class="category-card__icon"><i class="fas fa-language" aria-hidden="true"></i></div>
-                        <h3 class="category-card__title">Idiomas</h3>
-                        <p class="category-card__desc">Inglés Técnico y Comunicacional.</p>
+                    <a href="cursos/idiomas/" class="area-card--bg" style="background-image: url('assets/temario_idiomas.jpg');">
+                        <div class="area-icon"><i class="fas fa-language" aria-hidden="true"></i></div>
+                        <h3 class="area-title">Idiomas</h3>
+                        <p class="area-desc">Inglés Técnico y Comunicacional.</p>
                     </a>
                 </div>
             </div>
@@ -159,6 +158,7 @@
                 <div class="courses-grid">
                     <!-- Card Curso 1 -->
                     <article class="course-card">
+                        <img src="assets/temario_mantencionYproduccion.jpg" alt="Operación de Calderas" class="course-card__image">
                         <div class="course-card__header">
                             <span class="badge badge--technical">Técnico</span>
                             <span class="badge badge--modality">Presencial</span>
@@ -177,7 +177,8 @@
                     </article>
 
                     <!-- Card Curso 2 -->
-                    <article class="course-card">
+                    <artiimg src="assets/temario_computacion.jpg" alt="Excel Intermedio" class="course-card__image">
+                        <cle class="course-card">
                         <div class="course-card__header">
                             <span class="badge badge--office">Computación</span>
                             <span class="badge badge--modality">E-learning</span>
@@ -195,7 +196,8 @@
                         </div>
                     </article>
 
-                    <!-- Card Curso 3 -->
+                    <!-- img src="assets/temario_habilidadesblandas.jpg" alt="Liderazgo" class="course-card__image">
+                        <Card Curso 3 -->
                     <article class="course-card">
                         <div class="course-card__header">
                             <span class="badge badge--soft">Habilidades</span>
@@ -219,28 +221,27 @@
 
         <!-- Bloque de Confianza / Clientes -->
         <section class="section trust-section">
-            <div class="container">
-                <h2 class="section-title text-center">Nuestros Clientes</h2>
-                <p class="text-center section-subtitle" style="margin: 0 auto 2rem auto;">Empresas líderes confían en nuestra capacitación.</p>
-                <div class="clients-grid">
-                    <!-- REEMPLAZAR: Agregar las imágenes de los logos en la carpeta assets/ con estos nombres o actualizar los src -->
-                    <img src="assets/logo_aislapol.jpg" alt="Aislapol" class="client-logo-img" title="Aislapol">
-                    <img src="assets/logo_carozzi.jpg" alt="Carozzi" class="client-logo-img" title="Carozzi">
-                    <img src="assets/logo_club_hipico.jpg" alt="Club Hípico" class="client-logo-img" title="Club Hípico">
-                    <img src="assets/logo_clinica_davila.jpg" alt="Clínica Dávila" class="client-logo-img" title="Clínica Dávila">
-                    <img src="assets/logo_colun.jpg" alt="Colun" class="client-logo-img" title="Colun">
-                    <img src="assets/logo_budnik.jpg" alt="Budnik" class="client-logo-img" title="Budnik">
-                    <img src="assets/logo_cosmetica_nacional.jpg" alt="Cosmética Nacional" class="client-logo-img" title="Cosmética Nacional">
-                    <img src="assets/logo_dvp.jpg" alt="DVP" class="client-logo-img" title="DVP">
-                    <img src="assets/logo_maicao.jpg" alt="Maicao" class="client-logo-img" title="Maicao">
-                    <img src="assets/logo_cramer.jpg" alt="Cramer" class="client-logo-img" title="Cramer">
-                    <img src="assets/logo_pc_factory.jpg" alt="PC Factory" class="client-logo-img" title="PC Factory">
-                    <img src="assets/logo_harting.jpg" alt="Harting" class="client-logo-img" title="Harting">
-                    <img src="assets/logo_resiter.jpg" alt="Resiter" class="client-logo-img" title="Resiter">
-                    <img src="assets/logo_tnt.jpg" alt="TNT" class="client-logo-img" title="TNT">
-                    <img src="assets/logo_sunchemical.jpg" alt="SunChemical" class="client-logo-img" title="SunChemical">
-                    <img src="assets/logo_typack.jpg" alt="Typack" class="client-logo-img" title="Typack">
-                    <img src="assets/logo_unilever.jpg" alt="Unilever" class="client-logo-img" title="Unilever">
+            <div class="container"-grid">
+                    <img src="assets/clientes/aislapol.jpg" alt="Aislapol">
+                    <img src="assets/clientes/budnik.jpg" alt="Budnik">
+                    <img src="assets/clientes/carozzi.jpg" alt="Carozzi">
+                    <img src="assets/clientes/clinica-davila.jpg" alt="Clínica Dávila">
+                    <img src="assets/clientes/club-hipico.jpg" alt="Club Hípico">
+                    <img src="assets/clientes/colun.jpg" alt="Colun">
+                    <img src="assets/clientes/cosmetica-nacional.jpg" alt="Cosmética Nacional">
+                    <img src="assets/clientes/cramer.jpg" alt="Cramer">
+                    <img src="assets/clientes/dvp.jpg" alt="DVP">
+                    <img src="assets/clientes/harting.jpg" alt="Harting">
+                    <img src="assets/clientes/maicao.jpg" alt="Maicao">
+                    <img src="assets/clientes/pc-factory.jpg" alt="PC Factory">
+                    <img src="assets/clientes/resiter.jpg" alt="Resiter">
+                    <img src="assets/clientes/santa-rosa.jpg" alt="Santa Rosa">
+                    <img src="assets/clientes/sun-chemical.jpg" alt="Sun Chemical">
+                    <img src="assets/clientes/tnt.jpg" alt="TNT">
+                    <img src="assets/clientes/typack.jpg" alt="Typack">
+                    <img src="assets/clientes/unilever.jpg" alt="Unilever">
+                    <img src="assets/clientes/veterquimica.jpg" alt="Veterquimica">
+                    <img src="assets/clientes/vital.jpg" alt="Vital
                     <img src="assets/logo_veterquimica.jpg" alt="Veterquimica" class="client-logo-img" title="Veterquimica">
                     <img src="assets/logo_vital.jpg" alt="Vital" class="client-logo-img" title="Vital">
                     <img src="assets/logo_santa_rosa.jpg" alt="Santa Rosa" class="client-logo-img" title="Santa Rosa">
@@ -259,6 +260,7 @@
                 <h3 class="footer-title">Selitec Capacitación</h3>
                 <p>Organismo Técnico de Capacitación (OTEC) reconocido por SENCE. Certificación de Calidad NCh 2728.</p>
                 <div class="social-links">
+                    <a href="https://www.instagram.com/selitec.cl/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
                     <a href="https://www.facebook.com/selitec?fref=ts" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
                     <a href="https://www.linkedin.com/company/selitec/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                 </div>
