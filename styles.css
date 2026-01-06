@@ -238,8 +238,10 @@ ul {
 }
 
 .site-logo__img {
-    max-height: 60px;
+    max-height: 70px;
     width: auto;
+    height: 70px;
+    object-fit: contain;
 }
 
 .main-nav__list {
@@ -537,8 +539,14 @@ ul {
 
 .courses-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--sp-lg);
+}
+
+@media (max-width: 768px) {
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .course-card {
@@ -1278,6 +1286,25 @@ ul {
 @media (max-width: 768px) {
     .certification-badges {
         gap: 3rem;
+    }
+}
+
+/* Services Grid - Empresa Page */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .services-grid {
+        grid-template-columns: 1fr;
     }
 }
 
