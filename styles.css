@@ -582,6 +582,7 @@ ul {
 .badge--technical { background-color: #e3f2fd; color: #1565c0; }
 .badge--office { background-color: #e8f5e9; color: #2e7d32; }
 .badge--soft { background-color: #fff3e0; color: #ef6c00; }
+.badge--language { background-color: #f3e5f5; color: #7b1fa2; }
 .badge--modality { background-color: var(--c-primary); color: white; }
 
 .course-card__body {
@@ -1292,7 +1293,7 @@ ul {
 /* Services Grid - Empresa Page */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
@@ -1405,4 +1406,454 @@ ul {
 .btn--whatsapp:hover {
     background-color: #128C7E;
     transform: translateY(-1px);
+}
+
+/* =========================================
+   10. COURSE PAGE STYLES
+   ========================================= */
+
+/* Course Page Header - Simpler structure */
+.header {
+    background-color: var(--c-primary);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-md);
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem var(--sp-sm);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header__logo img {
+    height: 50px;
+    width: auto;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav__list {
+    display: flex;
+    gap: var(--sp-md);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__list a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.nav__list a:hover,
+.nav__list a.active {
+    border-bottom-color: var(--c-accent);
+}
+
+.nav__elearning {
+    color: var(--c-accent) !important;
+    font-weight: 700 !important;
+}
+
+.header__cta {
+    display: none; /* Hidden by default, can be shown if needed */
+}
+
+.header__mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    background-color: var(--c-bg-light);
+    padding: var(--sp-sm) 0;
+    border-bottom: 1px solid var(--c-border);
+}
+
+.breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+    content: '/';
+    margin-left: 0.5rem;
+    color: var(--c-text-muted);
+}
+
+.breadcrumbs a {
+    color: var(--c-primary);
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+/* Course Hero Section */
+.course-hero {
+    padding: var(--sp-xl) 0;
+    background-color: white;
+}
+
+.course-hero .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-xl);
+    align-items: center;
+}
+
+.course-hero__badges {
+    display: flex;
+    gap: var(--sp-sm);
+    margin-bottom: var(--sp-sm);
+    flex-wrap: wrap;
+}
+
+.badge--computer {
+    background-color: #e3f2fd;
+    color: #1565c0;
+}
+
+.badge--habilidades {
+    background-color: #fff3e0;
+    color: #ef6c00;
+}
+
+.badge--idiomas {
+    background-color: #f3e5f5;
+    color: #7b1fa2;
+}
+
+.badge--presencial {
+    background-color: var(--c-primary);
+    color: white;
+}
+
+.badge--elearning {
+    background-color: var(--c-secondary);
+    color: white;
+}
+
+.course-hero__title {
+    font-size: 2.25rem;
+    color: var(--c-primary);
+    margin-bottom: var(--sp-sm);
+    line-height: 1.2;
+}
+
+.course-hero__duration {
+    color: var(--c-text-muted);
+    margin-bottom: var(--sp-md);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.course-hero__description {
+    font-size: 1.1rem;
+    color: var(--c-text-main);
+    line-height: 1.6;
+}
+
+.course-hero__image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+/* Course Content Layout */
+.course-content {
+    padding: var(--sp-xl) 0;
+    background-color: var(--c-bg-light);
+}
+
+.course-content__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--sp-xl);
+}
+
+.course-content__main {
+    background-color: white;
+    padding: var(--sp-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.course-syllabus h2 {
+    color: var(--c-primary);
+    margin-bottom: var(--sp-md);
+    font-size: 1.75rem;
+    border-bottom: 3px solid var(--c-accent);
+    padding-bottom: 0.5rem;
+}
+
+.syllabus-content h3 {
+    color: var(--c-primary);
+    margin-top: var(--sp-md);
+    margin-bottom: var(--sp-sm);
+    font-size: 1.25rem;
+}
+
+.syllabus-content ul {
+    margin-left: 1.5rem;
+    margin-bottom: var(--sp-md);
+}
+
+.syllabus-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    list-style-type: disc;
+}
+
+/* Course Sidebar */
+.course-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-md);
+}
+
+.cta-box,
+.course-info-box,
+.download-box,
+.related-courses {
+    background-color: white;
+    padding: var(--sp-md);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.cta-box h3,
+.course-info-box h3,
+.download-box h3,
+.related-courses h3 {
+    color: var(--c-primary);
+    margin-bottom: var(--sp-md);
+    font-size: 1.25rem;
+}
+
+.cta-box .btn {
+    width: 100%;
+    margin-bottom: var(--sp-sm);
+}
+
+.btn--phone {
+    background-color: var(--c-blue-bright);
+    color: white;
+}
+
+.btn--phone:hover {
+    background-color: var(--c-blue-deep);
+}
+
+.btn--download {
+    background-color: var(--c-accent);
+    color: white;
+}
+
+.btn--download:hover {
+    background-color: var(--c-accent-hover);
+}
+
+.course-info-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.course-info-box li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: var(--sp-sm);
+    padding: var(--sp-sm);
+    border-bottom: 1px solid var(--c-border);
+}
+
+.course-info-box li:last-child {
+    border-bottom: none;
+}
+
+.course-info-box i {
+    color: var(--c-primary);
+    font-size: 1.25rem;
+    min-width: 20px;
+}
+
+.related-courses ul {
+    list-style: none;
+    padding: 0;
+}
+
+.related-courses li {
+    margin-bottom: 0.5rem;
+}
+
+.related-courses a {
+    color: var(--c-primary);
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    transition: background-color 0.2s;
+}
+
+.related-courses a:hover {
+    background-color: var(--c-bg-light);
+    color: var(--c-blue-bright);
+}
+
+/* Footer in course pages */
+.footer {
+    background-color: var(--c-primary);
+    color: white;
+    padding: var(--sp-xl) 0;
+}
+
+.footer__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--sp-sm);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--sp-xl);
+}
+
+.footer__column h3 {
+    color: var(--c-accent);
+    margin-bottom: var(--sp-md);
+    font-size: 1.2rem;
+}
+
+.footer__column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer__column li {
+    margin-bottom: 0.5rem;
+}
+
+.footer__column a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer__column a:hover {
+    color: var(--c-accent);
+}
+
+.footer__social {
+    display: flex;
+    gap: 1rem;
+    margin-top: var(--sp-md);
+}
+
+.footer__social a {
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.footer__social a:hover {
+    background-color: var(--c-accent);
+}
+
+.footer__bottom {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: var(--sp-sm) 0;
+    text-align: center;
+    margin-top: var(--sp-lg);
+}
+
+.footer__bottom p {
+    margin: 0;
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+/* =========================================
+   11. RESPONSIVE - COURSE PAGES
+   ========================================= */
+
+@media (max-width: 968px) {
+    .course-hero .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .course-content__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .course-sidebar {
+        order: -1; /* Show sidebar first on mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    .nav__list {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--c-primary);
+        flex-direction: column;
+        padding: var(--sp-md);
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .nav__list.is-open {
+        display: flex;
+    }
+    
+    .header__mobile-toggle {
+        display: block;
+    }
+    
+    .header__mobile-toggle span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: white;
+        margin: 5px 0;
+        transition: 0.3s;
+    }
+    
+    .course-hero__title {
+        font-size: 1.75rem;
+    }
+    
+    .footer__container {
+        grid-template-columns: 1fr;
+    }
 }

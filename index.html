@@ -21,6 +21,69 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
 
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Structured Data: Organization + WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.selitec.cl/#organization",
+          "name": "Selitec Capacitación",
+          "url": "https://www.selitec.cl",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.selitec.cl/assets/logo oficial.jpg"
+          },
+          "description": "Organismo Técnico de Capacitación (OTEC) con 22 años de experiencia en capacitación técnica y nivelación de estudios. Certificado por SENCE y NCh 2728.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "CL",
+            "addressLocality": "Santiago",
+            "addressRegion": "Región Metropolitana"
+          },
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+56-2-2638-5307",
+              "contactType": "customer service",
+              "areaServed": "CL",
+              "availableLanguage": "Spanish"
+            },
+            {
+              "@type": "ContactPoint",
+              "telephone": "+56-2-2639-7059",
+              "contactType": "customer service",
+              "areaServed": "CL",
+              "availableLanguage": "Spanish"
+            }
+          ],
+          "email": "contacto@selitec.cl",
+          "sameAs": [
+            "https://www.facebook.com/selitec",
+            "https://www.linkedin.com/company/selitec/",
+            "https://www.instagram.com/selitec.cl/"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.selitec.cl/#website",
+          "url": "https://www.selitec.cl",
+          "name": "Selitec Capacitación",
+          "description": "Capacitación técnica profesional con franquicia SENCE",
+          "publisher": {
+            "@id": "https://www.selitec.cl/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.selitec.cl/cursos/?search={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -313,6 +376,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Scripts -->
+    <script src="cursos-data.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

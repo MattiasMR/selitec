@@ -55,12 +55,27 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================= */
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const mainNav = document.getElementById('main-nav');
+    
+    // Support for both header styles (site-header and header)
+    const headerToggle = document.querySelector('.header__mobile-toggle');
+    const headerNav = document.querySelector('.header__nav');
 
     if (menuToggle && mainNav) {
         menuToggle.addEventListener('click', () => {
             const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
             mainNav.classList.toggle('is-open');
             menuToggle.setAttribute('aria-expanded', !isExpanded);
+        });
+    }
+    
+    if (headerToggle && headerNav) {
+        headerToggle.addEventListener('click', () => {
+            const navList = headerNav.querySelector('.nav__list');
+            if (navList) {
+                navList.classList.toggle('is-open');
+                const isExpanded = headerToggle.getAttribute('aria-expanded') === 'true';
+                headerToggle.setAttribute('aria-expanded', !isExpanded);
+            }
         });
     }
 
@@ -105,69 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const coursesGrid = document.getElementById('courses-grid');
     
     if (coursesGrid) {
-        // Mock Data for Courses
-        const coursesData = [
-            {
-                id: 1,
-                title: "Operación de Calderas y Autoclaves",
-                category: "mantencion",
-                modality: "presencial",
-                hours: 40,
-                desc: "Curso habilitante para examen Seremi de Salud. Decreto 10.",
-                slug: "operacion-calderas",
-                image: "../assets/temario_mantencionYproduccion.jpg"
-            },
-            {
-                id: 2,
-                title: "Excel Intermedio para Gestión",
-                category: "computacion",
-                modality: "elearning",
-                hours: 24,
-                desc: "Tablas dinámicas, funciones lógicas y gestión de datos.",
-                slug: "excel-intermedio",
-                image: "../assets/temario_computacion.jpg"
-            },
-            {
-                id: 3,
-                title: "Liderazgo Efectivo y Trabajo en Equipo",
-                category: "habilidades",
-                modality: "presencial",
-                hours: 16,
-                desc: "Mejore la comunicación y productividad de su equipo.",
-                slug: "liderazgo-equipos",
-                image: "../assets/temario_habilidadesblandas.jpg"
-            },
-            {
-                id: 4,
-                title: "Inglés Técnico para Mantención",
-                category: "idiomas",
-                modality: "elearning",
-                hours: 30,
-                desc: "Vocabulario técnico específico para manuales y procedimientos.",
-                slug: "ingles-tecnico",
-                image: "../assets/temario_idiomas.jpg"
-            },
-            {
-                id: 5,
-                title: "Electricidad Industrial Básica",
-                category: "mantencion",
-                modality: "presencial",
-                hours: 40,
-                desc: "Fundamentos de circuitos, seguridad y mediciones.",
-                slug: "electricidad-basica",
-                image: "../assets/temario_mantencionYproduccion.jpg"
-            },
-            {
-                id: 6,
-                title: "Técnicas de Ventas Consultivas",
-                category: "habilidades",
-                modality: "elearning",
-                hours: 20,
-                desc: "Estrategias modernas para cerrar negocios B2B.",
-                slug: "ventas-consultivas",
-                image: "../assets/temario_habilidadesblandas.jpg"
-            }
-        ];
+        // Use coursesData from cursos-data.js
+        const coursesData = typeof CURSOS_DATA !== 'undefined' ? CURSOS_DATA : [];
 
         const renderCourses = (courses) => {
             coursesGrid.innerHTML = '';
@@ -185,23 +139,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 const card = document.createElement('article');
                 card.className = 'course-card';
                 
-                // Determine badge colors based on category (simplified logic)
+                // Determine badge colors based on category
                 let badgeClass = 'badge--technical';
-                if (course.category === 'computacion') badgeClass = 'badge--office';
-                if (course.category === 'habilidades') badgeClass = 'badge--soft';
+                let categoryLabel = 'Mantención y Producción';
+                
+                if (course.category === 'computacion') {
+                    badgeClass = 'badge--office';
+                    categoryLabel = 'Computación';
+                }
+                if (course.category === 'habilidades') {
+                    badgeClass = 'badge--soft';
+                    categoryLabel = 'Habilidades Blandas';
+                }
+                if (course.category === 'idiomas') {
+                    badgeClass = 'badge--language';
+                    categoryLabel = 'Idiomas';
+                }
+                
+                const modalityLabel = course.modality === 'elearning' ? 'E-learning' : 'Presencial';
                 
                 card.innerHTML = `
-                    <img src="${course.image}" alt="${course.title}" class="course-card__image">
+                    <img src="${course.image}" alt="${course.title}" class="course-card__image" width="300" height="200" loading="lazy">
                     <div class="course-card__header">
-                        <span class="badge ${badgeClass}">${course.category}</span>
-                        <span class="badge badge--modality">${course.modality}</span>
+                        <span class="badge ${badgeClass}">${categoryLabel}</span>
+                        <span class="badge badge--modality">${modalityLabel}</span>
                     </div>
                     <div class="course-card__body">
-                        <h3 class="course-card__title"><a href="../curso/${course.slug}/">${course.title}</a></h3>
-                        <p class="course-card__excerpt">${course.desc}</p>
+                        <h3 class="course-card__title"><a href="../curso/${course.slug}/">${course.shortTitle}</a></h3>
+                        <p class="course-card__excerpt">${course.desc.substring(0, 120)}...</p>
                         <ul class="course-card__meta">
                             <li><i class="far fa-clock" aria-hidden="true"></i> ${course.hours} Horas</li>
-                            <li><i class="fas fa-laptop" aria-hidden="true"></i> ${course.modality === 'elearning' ? 'Online' : 'Presencial'}</li>
+                            <li><i class="fas fa-laptop" aria-hidden="true"></i> ${modalityLabel}</li>
                         </ul>
                     </div>
                     <div class="course-card__footer">
@@ -214,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Filter Logic
         const filterCourses = () => {
-            const searchInput = document.getElementById('course-search').value.toLowerCase();
+            const searchInput = document.getElementById('course-search')?.value.toLowerCase() || '';
             
             const selectedCategories = Array.from(document.querySelectorAll('#category-filters input:checked'))
                 .map(cb => cb.value);
@@ -224,7 +192,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const filtered = coursesData.filter(course => {
                 const matchesSearch = course.title.toLowerCase().includes(searchInput) || 
-                                      course.desc.toLowerCase().includes(searchInput);
+                                      course.desc.toLowerCase().includes(searchInput) ||
+                                      course.shortTitle.toLowerCase().includes(searchInput);
                 const matchesCategory = selectedCategories.includes(course.category);
                 const matchesModality = selectedModalities.includes(course.modality);
                 
@@ -235,7 +204,11 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         // Event Listeners for Filters
-        document.getElementById('course-search').addEventListener('input', filterCourses);
+        const searchInput = document.getElementById('course-search');
+        if (searchInput) {
+            searchInput.addEventListener('input', filterCourses);
+        }
+        
         document.querySelectorAll('#category-filters input').forEach(cb => cb.addEventListener('change', filterCourses));
         document.querySelectorAll('#modality-filters input').forEach(cb => cb.addEventListener('change', filterCourses));
 

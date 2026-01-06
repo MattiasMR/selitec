@@ -2,6 +2,9 @@
 User-agent: *
 Allow: /
 
+# Ubicación del sitemap
+Sitemap: https://www.selitec.mattias.cl/sitemap.xml
+
 # Páginas principales
 Allow: /cursos/
 Allow: /programacion/
@@ -18,6 +21,6 @@ Allow: /app.js
 # Prevenir indexación de archivos administrativos
 Disallow: /private/
 Disallow: /*.pdf$
-
-# Sitemap (agregar cuando esté disponible)
-# Sitemap: https://www.selitec.cl/sitemap.xml
+Disallow: /generate_sitemap.js
+Disallow: /generate_course_structured_data.js
+Disallow: /cursos-data.js
