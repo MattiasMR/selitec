@@ -539,7 +539,7 @@ ul {
 
 .courses-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--sp-lg);
 }
 
@@ -1020,7 +1020,7 @@ ul {
 .course-hero {
     background-color: var(--c-primary);
     color: white;
-    padding: var(--sp-xl) 0;
+    padding: 2.5rem 0;
 }
 
 .course-hero__badges {
