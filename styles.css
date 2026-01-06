@@ -299,11 +299,15 @@ ul {
     background: linear-gradient(rgba(38, 34, 98, 0.85), rgba(38, 34, 98, 0.7)), url('assets/principal.jpg');
     background-size: cover;
     background-position: center;
-    color: white;
-    padding: 6rem 0; /* More padding */
+    color: var(--c-white);
+    padding: 6rem 0; /* Standard Home Padding */
     text-align: center;
     position: relative;
     overflow: hidden;
+}
+
+.hero--compact {
+    padding: 3.5rem 0; /* Compact Padding for internal pages */
 }
 
 /* Typing Effect Cursor */
@@ -312,11 +316,30 @@ ul {
 }
 
 .hero__title {
-    font-size: 3rem;
+    font-size: 3rem; /* Fallback */
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Responsive typography */
     font-weight: 700;
     margin-bottom: var(--sp-sm);
     line-height: 1.2;
+    color: var(--c-white); /* Ensure title is always white */
     animation: fadeInDown 0.8s ease-out;
+}
+
+.hero__subtitle {
+    font-size: 1.125rem;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.5;
+}
+
+.hero__actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
 }
 
 /* Area Cards with Backgrounds - Enhanced */
