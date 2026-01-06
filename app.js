@@ -254,60 +254,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Render Function
-        const renderCourses = (courses) => {
-            const grid = document.getElementById('courses-grid');
-            const resultCount = document.getElementById('result-count');
-            
-            grid.innerHTML = '';
-            
-            if (resultCount) {
-                resultCount.textContent = courses.length;
-            }
-
-            if (courses.length === 0) {
-                grid.innerHTML = '<p class="no-results">No se encontraron cursos con los filtros seleccionados.</p>';
-                return;
-            }
-
-            courses.forEach(course => {
-                const article = document.createElement('article');
-                article.className = 'course-card';
-                
-                // Determine badge class
-                let badgeClass = 'badge--technical';
-                if(course.category === 'computacion') badgeClass = 'badge--office';
-                if(course.category === 'habilidades') badgeClass = 'badge--soft';
-                if(course.category === 'idiomas') badgeClass = 'badge--technical';
-
-                article.innerHTML = `
-                    <div class="course-card__image-container">
-                        <img src="${course.image}" alt="${course.title}" class="course-card__image">
-                    </div>
-                    <div class="course-card__header">
-                        <span class="badge ${badgeClass}">${course.category.charAt(0).toUpperCase() + course.category.slice(1)}</span>
-                        <span class="badge badge--modality">${course.modality.charAt(0).toUpperCase() + course.modality.slice(1)}</span>
-                    </div>
-                    <div class="course-card__body">
-                        <h3 class="course-card__title"><a href="../curso/${course.slug}/">${course.title}</a></h3>
-                        <p class="course-card__excerpt">${course.desc}</p>
-                        <ul class="course-card__meta">
-                            <li><i class="far fa-clock" aria-hidden="true"></i> ${course.hours} Horas</li>
-                            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Certificado</li>
-                        </ul>
-                    </div>
-                    <div class="course-card__footer">
-                        <a href="../curso/${course.slug}/" class="btn btn--outline btn--full">Ver Temario</a>
-                    </div>
-                `;
-                grid.appendChild(article);
-            });
-        };
-
         // Initial Render
         filterCourses();
     }
-});
 
     /* =========================================
        5. CONTACT FORM (Mailto Fallback)
