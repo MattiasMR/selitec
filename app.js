@@ -256,5 +256,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    console.log('Selitec App Initialized - Filters & Accordions Ready');
 });
