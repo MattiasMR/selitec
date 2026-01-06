@@ -1,0 +1,23 @@
+# robots.txt para Selitec
+User-agent: *
+Allow: /
+
+# Páginas principales
+Allow: /cursos/
+Allow: /programacion/
+Allow: /nivelacion/
+Allow: /empresa/
+Allow: /contacto/
+Allow: /curso/
+
+# Assets y recursos
+Allow: /assets/
+Allow: /styles.css
+Allow: /app.js
+
+# Prevenir indexación de archivos administrativos
+Disallow: /private/
+Disallow: /*.pdf$
+
+# Sitemap (agregar cuando esté disponible)
+# Sitemap: https://www.selitec.cl/sitemap.xml
