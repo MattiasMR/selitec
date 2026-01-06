@@ -298,17 +298,116 @@ ul {
     background-size: cover;
     background-position: center;
     color: white;
-    padding: 5rem 0;
+    padding: 6rem 0; /* More padding */
     text-align: center;
     position: relative;
+    overflow: hidden;
+}
+
+/* Typing Effect Cursor */
+.txt-type > .txt {
+    border-right: 0.2rem solid var(--c-accent);
 }
 
 .hero__title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 700;
     margin-bottom: var(--sp-sm);
     line-height: 1.2;
     animation: fadeInDown 0.8s ease-out;
+}
+
+/* Area Cards with Backgrounds - Enhanced */
+.area-card--bg {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    border: none;
+    overflow: hidden;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+    border-radius: var(--radius-md);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    z-index: 1;
+}
+
+.area-card--bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(38,34,98,0.4), rgba(38,34,98,0.9));
+    z-index: -1;
+    transition: background 0.3s ease;
+}
+
+.area-card--bg:hover::before {
+    background: linear-gradient(to bottom, rgba(38,34,98,0.2), rgba(38,34,98,0.8));
+}
+
+.area-card--bg:hover {
+    transform: translateY(-5px);
+}
+
+.area-title {
+    font-size: 1.8rem; /* Bigger title */
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+/* Step Cards Interaction */
+.step-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.step-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.step-card:hover .step-details {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 1rem;
+}
+
+/* Course Card Image */
+.course-card__image-container {
+    height: 180px;
+    overflow: hidden;
+    border-bottom: 3px solid var(--c-primary);
+}
+
+.course-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.course-card:hover .course-card__image {
+    transform: scale(1.05);
 }
 
 .hero__subtitle {

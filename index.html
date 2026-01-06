@@ -36,7 +36,7 @@
         <div class="container site-header__inner">
             <div class="site-logo">
                 <a href="./" aria-label="Volver al inicio">
-                    <img src="assets/logo oficial.jpg" alt="SELITEC" class="site-logo__img">
+                    <img src="assets/logo oficial.jpg" alt="SELITEC" class="site-logo__img" style="max-height: 70px;">
                 </a>
             </div>
 
@@ -61,9 +61,10 @@
     <main>
         <!-- Hero Section: Propuesta de Valor -->
         <section class="hero">
+            <div class="hero__overlay"></div> <!-- Added overlay div for better contrast if needed via CSS -->
             <div class="container hero__content">
-                <h1 class="hero__title">Capacitación Técnica para Empresas y Trabajadores</h1>
-                <p class="hero__subtitle">Especialistas en Mantención, Operaciones y Seguridad Industrial. Cursos con Franquicia Tributaria SENCE para empresas y certificación para particulares.</p>
+                <h1 class="hero__title">Capacitación Técnica para<br> <span class="txt-type" data-wait="3000" data-words='["Empresas", "Trabajadores", "Su Futuro"]'>Empresas</span></h1>
+                <p class="hero__subtitle">Especialistas en Mantención, Operaciones y Seguridad Industrial. Cursos con Franquicia Tributaria SENCE.</p>
                 
                 <div class="hero__actions">
                     <a href="cursos/" class="btn btn--primary">Ver Cursos Disponibles</a>
@@ -157,13 +158,15 @@
 
                 <div class="courses-grid">
                     <!-- Card Curso 1 -->
-                    <article class="course-card">
+                    <article class="course-card">image-container">
+                            <img src="assets/temario_mantencionYproduccion.jpg" alt="Operación de Calderas" class="course-card__image">
+                        </div>
                         <div class="course-card__header">
                             <span class="badge badge--technical">Técnico</span>
                             <span class="badge badge--modality">Presencial</span>
                         </div>
                         <div class="course-card__body">
-                            <h3 class="course-card__title"><a href="curso/operacion-calderas/">Operación de Calderas y Autoclaves (Decreto 10)</a></h3>
+                            <h3 class="course-card__title">Operación de Calderas y Autoclaves (Decreto 10)</h3>
                             <p class="course-card__excerpt">Prepárese para el examen de certificación de la Seremi de Salud. Normativa vigente y operación segura.</p>
                             <ul class="course-card__meta">
                                 <li><i class="far fa-clock" aria-hidden="true"></i> 40 Horas</li>
@@ -177,12 +180,15 @@
 
                     <!-- Card Curso 2 -->
                     <article class="course-card">
+                        <div class="course-card__image-container">
+                            <img src="assets/temario_computacion.jpg" alt="Excel Intermedio" class="course-card__image">
+                        </div>
                         <div class="course-card__header">
                             <span class="badge badge--office">Computación</span>
                             <span class="badge badge--modality">E-learning</span>
                         </div>
                         <div class="course-card__body">
-                            <h3 class="course-card__title"><a href="curso/excel-intermedio/">Microsoft Excel Intermedio para Gestión</a></h3>
+                            <h3 class="course-card__title">Microsoft Excel Intermedio para Gestión</h3>
                             <p class="course-card__excerpt">Domine tablas dinámicas, funciones lógicas y gestión de bases de datos para optimizar su trabajo administrativo.</p>
                             <ul class="course-card__meta">
                                 <li><i class="far fa-clock" aria-hidden="true"></i> 24 Horas</li>
@@ -194,13 +200,17 @@
                         </div>
                     </article>
 
-                    <!-- Card Curso 3 -->
-                    <article class="course-card">
+                     <!-- Card Curso 3 -->
+                     <article class="course-card">
+                        <div class="course-card__image-container">
+                            <img src="assets/temario_habilidadesblandas.jpg" alt="Liderazgo" class="course-card__image">
+                        </div>
                         <div class="course-card__header">
                             <span class="badge badge--soft">Habilidades</span>
                             <span class="badge badge--modality">Presencial</span>
                         </div>
                         <div class="course-card__body">
+                            <h3 class="course-card__title">Liderazgo Efectivo y Trabajo en Equipo
                             <h3 class="course-card__title"><a href="curso/liderazgo-equipos/">Liderazgo Efectivo y Trabajo en Equipo</a></h3>
                             <p class="course-card__excerpt">Herramientas prácticas para supervisores y jefaturas. Mejore la comunicación y productividad de su área.</p>
                             <ul class="course-card__meta">
@@ -216,16 +226,9 @@
                             </ul>
                         </div>
                         <div class="course-card__footer">
-                            <a href="curso/liderazgo-equipos/" class="btn btn--outline btn--full">Ver Temario</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Bloque de Confianza / Clientes -->
-        <section class="section trust-section">
-            <div class="container"-grid">
+                            <a hre>
+                <h2 class="section-title text-center">Empresas que confían en nosotros</h2>
+                <div class="client-grid">
                     <img src="assets/clientes/aislapol.jpg" alt="Aislapol">
                     <img src="assets/clientes/budnik.jpg" alt="Budnik">
                     <img src="assets/clientes/carozzi.jpg" alt="Carozzi">
@@ -240,6 +243,12 @@
                     <img src="assets/clientes/pc-factory.jpg" alt="PC Factory">
                     <img src="assets/clientes/resiter.jpg" alt="Resiter">
                     <img src="assets/clientes/santa-rosa.jpg" alt="Santa Rosa">
+                    <img src="assets/clientes/sun-chemical.jpg" alt="Sun Chemical">
+                    <img src="assets/clientes/tnt.jpg" alt="TNT">
+                    <img src="assets/clientes/typack.jpg" alt="Typack">
+                    <img src="assets/clientes/unilever.jpg" alt="Unilever">
+                    <img src="assets/clientes/veterquimica.jpg" alt="Veterquimica">
+                    <img src="assets/clientes/vital.jpg" alt="Vital
                     <img src="assets/clientes/sun-chemical.jpg" alt="Sun Chemical">
                     <img src="assets/clientes/tnt.jpg" alt="TNT">
                     <img src="assets/clientes/typack.jpg" alt="Typack">
@@ -276,7 +285,7 @@
                     <li><a href="cursos/">Catálogo de Cursos</a></li>
                     <li><a href="programacion/">Programación Mensual</a></li>
                     <li><a href="nivelacion/">Nivelación de Estudios</a></li>
-                    <li><a href="elearning/">Plataforma E-learning</a></li>
+                    <li><a href="https://www.selitec.cl/elearning">Plataforma E-learning</a></li>
                     <li><a href="politicas/">Políticas de Privacidad</a></li>
                 </ul>
             </div>
