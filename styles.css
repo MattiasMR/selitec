@@ -1268,6 +1268,14 @@ ul {
     padding: var(--sp-lg) 0;
 }
 
+/* Contact Schedule Box */
+.contact-schedule {
+    margin-top: 2rem;
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+}
+
 @media (max-width: 768px) {
     .client-grid {
         grid-template-columns: 1fr;
@@ -1277,6 +1285,18 @@ ul {
     .contact-grid {
         grid-template-columns: 1fr;
         gap: var(--sp-lg);
+    }
+
+    .contact-schedule {
+        text-align: center;
+    }
+
+    .schedule-table caption {
+        display: block;
+        text-align: center;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        color: var(--c-primary);
     }
 }
 
