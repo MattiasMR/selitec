@@ -4,5 +4,8 @@ dist
 .env
 
 *.md
+*.pdf
+*.txt
+*.xlsx
 
 mockup*
