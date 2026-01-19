@@ -1201,6 +1201,10 @@ ul {
     .schedule-table, .schedule-table thead, .schedule-table tbody, .schedule-table th, .schedule-table td, .schedule-table tr { 
         display: block; 
     }
+
+    .schedule-table {
+        min-width: 100%; /* Force full width, canceling desktop min-width */
+    }
     
     .schedule-table thead tr { 
         position: absolute;
@@ -1254,6 +1258,26 @@ ul {
     align-items: center;
     justify-items: center;
     margin-top: 2rem;
+}
+
+/* Contact Page Grid */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: var(--sp-lg) 0;
+}
+
+@media (max-width: 768px) {
+    .client-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--sp-lg);
+    }
 }
 
 @media (min-width: 768px) {
