@@ -123,6 +123,44 @@ ul {
 
 .text-center { text-align: center; }
 
+/* Grid Utilities */
+.grid {
+    display: grid;
+    gap: var(--sp-md);
+}
+
+.grid--2-cols {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 768px) {
+    .grid--2-cols, .grid--3-cols, .grid--4-cols {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Course Page Layout */
+.course-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: var(--sp-xl);
+    align-items: start;
+}
+
+@media (max-width: 992px) {
+    .course-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* =========================================
    4. COMPONENTS
    ========================================= */

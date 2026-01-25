@@ -1,27 +1,27 @@
 const CURSOS_DATA = [
     {
         "id": 1,
-        "slug": "exce-lavanzado",
+        "slug": "excel-avanzado-",
         "category": "computacion",
         "modality": "presencial",
-        "title": "Exce lAvanzado",
-        "shortTitle": "Exce lAvanzado",
+        "title": "Excel Avanzado ",
+        "shortTitle": "Excel Avanzado ",
         "hours": "",
-        "desc": "Exce lAvanzado - Curso técnico especializado.",
+        "desc": "Excel Avanzado  - Curso técnico especializado.",
         "image": "../assets/temario_computacion.jpg",
-        "pdf": "../assets/temarios/Computacion/Exce lAvanzado .docx"
+        "pdf": "../assets/temarios/Computacion/Excel Avanzado .docx"
     },
     {
         "id": 2,
         "slug": "excel-basico",
         "category": "computacion",
         "modality": "presencial",
-        "title": "Excel Básico",
-        "shortTitle": "Excel Básico",
+        "title": "Excel Basico",
+        "shortTitle": "Excel Basico",
         "hours": "",
-        "desc": "Excel Básico - Curso técnico especializado.",
+        "desc": "Excel Basico - Curso técnico especializado.",
         "image": "../assets/temario_computacion.jpg",
-        "pdf": "../assets/temarios/Computacion/Excel Ba╠üsico.docx"
+        "pdf": "../assets/temarios/Computacion/Excel Basico.docx"
     },
     {
         "id": 3,
@@ -40,48 +40,48 @@ const CURSOS_DATA = [
         "slug": "operacion-de-autoclaves-caldera-de-calefaccion-e-industrial",
         "category": "mantencion",
         "modality": "presencial",
-        "title": "Operación de Autoclaves, caldera de calefacción e industrial",
-        "shortTitle": "Operación de Autoclaves, caldera de calefacción e industrial",
+        "title": "Operacion de Autoclaves, caldera de calefaccion e industrial",
+        "shortTitle": "Operacion de Autoclaves, caldera de calefaccion e industrial",
         "hours": "",
-        "desc": "Operación de Autoclaves, caldera de calefacción e industrial - Curso técnico especializado.",
+        "desc": "Operacion de Autoclaves, caldera de calefaccion e industrial - Curso técnico especializado.",
         "image": "../assets/temario_mantencionYproduccion.jpg",
-        "pdf": "../assets/temarios/Mantencion y Produccion/1.- Operacio╠ün de Autoclaves, caldera de calefaccio╠ün e industrial.docx"
+        "pdf": "../assets/temarios/Mantencion y Produccion/1.- Operacion de Autoclaves, caldera de calefaccion e industrial.docx"
     },
     {
         "id": 5,
         "slug": "operacion-de-autoclaves",
         "category": "mantencion",
         "modality": "presencial",
-        "title": "Operación de Autoclaves",
-        "shortTitle": "Operación de Autoclaves",
+        "title": "Operacion de Autoclaves",
+        "shortTitle": "Operacion de Autoclaves",
         "hours": "",
-        "desc": "Operación de Autoclaves - Curso técnico especializado.",
+        "desc": "Operacion de Autoclaves - Curso técnico especializado.",
         "image": "../assets/temario_mantencionYproduccion.jpg",
-        "pdf": "../assets/temarios/Mantencion y Produccion/2.- Operacio╠ün de Autoclaves.docx"
+        "pdf": "../assets/temarios/Mantencion y Produccion/2.- Operacion de Autoclaves.docx"
     },
     {
         "id": 6,
         "slug": "operacion-de-calderas-de-fluidos-termicos",
         "category": "mantencion",
         "modality": "presencial",
-        "title": "Operación de Calderas de Fluidos Termicos",
-        "shortTitle": "Operación de Calderas de Fluidos Termicos",
+        "title": "Operacion de Calderas de Fluidos Termicos",
+        "shortTitle": "Operacion de Calderas de Fluidos Termicos",
         "hours": "",
-        "desc": "Operación de Calderas de Fluidos Termicos - Curso técnico especializado.",
+        "desc": "Operacion de Calderas de Fluidos Termicos - Curso técnico especializado.",
         "image": "../assets/temario_mantencionYproduccion.jpg",
-        "pdf": "../assets/temarios/Mantencion y Produccion/3.- Operacio╠ün de Calderas de Fluidos Termicos.docx"
+        "pdf": "../assets/temarios/Mantencion y Produccion/3.- Operacion de Calderas de Fluidos Termicos.docx"
     },
     {
         "id": 7,
         "slug": "metrologia-ajustes-y-tolerancias",
         "category": "mantencion",
         "modality": "presencial",
-        "title": "Metrología, Ajustes y Tolerancias",
-        "shortTitle": "Metrología, Ajustes y Tolerancias",
+        "title": "Metrologia, Ajustes y Tolerancias",
+        "shortTitle": "Metrologia, Ajustes y Tolerancias",
         "hours": "",
-        "desc": "Metrología, Ajustes y Tolerancias - Curso técnico especializado.",
+        "desc": "Metrologia, Ajustes y Tolerancias - Curso técnico especializado.",
         "image": "../assets/temario_mantencionYproduccion.jpg",
-        "pdf": "../assets/temarios/Mantencion y Produccion/4.- Metrologi╠üa, Ajustes y Tolerancias.docx"
+        "pdf": "../assets/temarios/Mantencion y Produccion/4.- Metrologia, Ajustes y Tolerancias.docx"
     },
     {
         "id": 8,
@@ -112,24 +112,24 @@ const CURSOS_DATA = [
         "slug": "mecanica-mantencion-maquinas-y-equipos-industriales",
         "category": "mantencion",
         "modality": "presencial",
-        "title": "Mecánica, Mantención Máquinas y Equipos Industriales",
-        "shortTitle": "Mecánica, Mantención Máquinas y Equipos Industriales",
+        "title": "Mecanica, Mantencion Maquinas y Equipos Industriales",
+        "shortTitle": "Mecanica, Mantencion Maquinas y Equipos Industriales",
         "hours": "",
-        "desc": "Mecánica, Mantención Máquinas y Equipos Industriales - Curso técnico especializado.",
+        "desc": "Mecanica, Mantencion Maquinas y Equipos Industriales - Curso técnico especializado.",
         "image": "../assets/temario_mantencionYproduccion.jpg",
-        "pdf": "../assets/temarios/Mantencion y Produccion/7.- Meca╠ünica, Mantencio╠ün Ma╠üquinas y Equipos Industriales.docx"
+        "pdf": "../assets/temarios/Mantencion y Produccion/7.- Mecanica, Mantencion Maquinas y Equipos Industriales.docx"
     },
     {
         "id": 11,
         "slug": "instalacion-electrica-domiciliaria",
         "category": "mantencion",
         "modality": "presencial",
-        "title": "Instalación eléctrica domiciliaria",
-        "shortTitle": "Instalación eléctrica domiciliaria",
+        "title": "Instalacion electrica domiciliaria",
+        "shortTitle": "Instalacion electrica domiciliaria",
         "hours": "",
-        "desc": "Instalación eléctrica domiciliaria - Curso técnico especializado.",
+        "desc": "Instalacion electrica domiciliaria - Curso técnico especializado.",
         "image": "../assets/temario_mantencionYproduccion.jpg",
-        "pdf": "../assets/temarios/Mantencion y Produccion/8.- Instalacio╠ün ele╠üctrica domiciliaria.docx"
+        "pdf": "../assets/temarios/Mantencion y Produccion/8.- Instalacion electrica domiciliaria.docx"
     },
     {
         "id": 12,
@@ -148,132 +148,132 @@ const CURSOS_DATA = [
         "slug": "hidrauica-industrial",
         "category": "mantencion",
         "modality": "presencial",
-        "title": "Hidráuica Industrial",
-        "shortTitle": "Hidráuica Industrial",
+        "title": "Hidrauica Industrial",
+        "shortTitle": "Hidrauica Industrial",
         "hours": "",
-        "desc": "Hidráuica Industrial - Curso técnico especializado.",
+        "desc": "Hidrauica Industrial - Curso técnico especializado.",
         "image": "../assets/temario_mantencionYproduccion.jpg",
-        "pdf": "../assets/temarios/Mantencion y Produccion/10.- Hidra╠üuica Industrial.docx"
+        "pdf": "../assets/temarios/Mantencion y Produccion/10.- Hidrauica Industrial.docx"
     },
     {
         "id": 14,
         "slug": "neumatica-basica",
         "category": "mantencion",
         "modality": "presencial",
-        "title": "Neumática Básica",
-        "shortTitle": "Neumática Básica",
+        "title": "Neumatica Basica",
+        "shortTitle": "Neumatica Basica",
         "hours": "",
-        "desc": "Neumática Básica - Curso técnico especializado.",
+        "desc": "Neumatica Basica - Curso técnico especializado.",
         "image": "../assets/temario_mantencionYproduccion.jpg",
-        "pdf": "../assets/temarios/Mantencion y Produccion/11.- Neuma╠ütica Ba╠üsica.docx"
+        "pdf": "../assets/temarios/Mantencion y Produccion/11.- Neumatica Basica.docx"
     },
     {
         "id": 15,
         "slug": "operacion-y-mantencion-de-gruas-horquillas",
         "category": "maquinas",
         "modality": "presencial",
-        "title": "Operación y Mantención de Grúas Horquillas",
-        "shortTitle": "Operación y Mantención de Grúas Horquillas",
+        "title": "Operacion y Mantencion de Gruas Horquillas",
+        "shortTitle": "Operacion y Mantencion de Gruas Horquillas",
         "hours": "",
-        "desc": "Operación y Mantención de Grúas Horquillas - Curso técnico especializado.",
+        "desc": "Operacion y Mantencion de Gruas Horquillas - Curso técnico especializado.",
         "image": "../assets/temario_mantencionYproduccion.jpg",
-        "pdf": "../assets/temarios/Maquinas y Equipos/1.- Operacio╠ün y Mantencio╠ün de Gru╠üas Horquillas.docx"
+        "pdf": "../assets/temarios/Maquinas y Equipos/1.- Operacion y Mantencion de Gruas Horquillas.docx"
     },
     {
         "id": 16,
         "slug": "operacion-y-mantencion-apiladores-electricos",
         "category": "maquinas",
         "modality": "presencial",
-        "title": "Operación y Mantención Apiladores Eléctricos",
-        "shortTitle": "Operación y Mantención Apiladores Eléctricos",
+        "title": "Operacion y Mantencion Apiladores Electricos",
+        "shortTitle": "Operacion y Mantencion Apiladores Electricos",
         "hours": "",
-        "desc": "Operación y Mantención Apiladores Eléctricos - Curso técnico especializado.",
+        "desc": "Operacion y Mantencion Apiladores Electricos - Curso técnico especializado.",
         "image": "../assets/temario_mantencionYproduccion.jpg",
-        "pdf": "../assets/temarios/Maquinas y Equipos/2.- Operacio╠ün y Mantencio╠ün Apiladores Ele╠üctricos.docx"
+        "pdf": "../assets/temarios/Maquinas y Equipos/2.- Operacion y Mantencion Apiladores Electricos.docx"
     },
     {
         "id": 17,
         "slug": "operacion-de-alza-hombre-y-trabajos-en-altura",
         "category": "maquinas",
         "modality": "presencial",
-        "title": "Operación de Alza Hombre y Trabajos en Altura",
-        "shortTitle": "Operación de Alza Hombre y Trabajos en Altura",
+        "title": "Operacion de Alza Hombre y Trabajos en Altura",
+        "shortTitle": "Operacion de Alza Hombre y Trabajos en Altura",
         "hours": "",
-        "desc": "Operación de Alza Hombre y Trabajos en Altura - Curso técnico especializado.",
+        "desc": "Operacion de Alza Hombre y Trabajos en Altura - Curso técnico especializado.",
         "image": "../assets/temario_mantencionYproduccion.jpg",
-        "pdf": "../assets/temarios/Maquinas y Equipos/3.- Operacio╠ün de Alza Hombre y Trabajos en Altura.docx"
+        "pdf": "../assets/temarios/Maquinas y Equipos/3.- Operacion de Alza Hombre y Trabajos en Altura.docx"
     },
     {
         "id": 18,
         "slug": "operacion-y-mantencion-de-puente-gruas-20-horas",
         "category": "maquinas",
         "modality": "presencial",
-        "title": "Operación y mantención de puente grúas (20 horas)",
-        "shortTitle": "Operación y mantención de puente grúas (20 horas)",
-        "hours": "",
-        "desc": "Operación y mantención de puente grúas (20 horas) - Curso técnico especializado.",
+        "title": "Operacion y mantencion de puente gruas (20 horas)",
+        "shortTitle": "Operacion y mantencion de puente gruas (20 horas)",
+        "hours": "20",
+        "desc": "Operacion y mantencion de puente gruas (20 horas) - Curso técnico especializado.",
         "image": "../assets/temario_mantencionYproduccion.jpg",
-        "pdf": "../assets/temarios/Maquinas y Equipos/4.- Operacio╠ün y mantencio╠ün de puente gru╠üas (20 horas).docx"
+        "pdf": "../assets/temarios/Maquinas y Equipos/4.- Operacion y mantencion de puente gruas (20 horas).docx"
     },
     {
         "id": 19,
         "slug": "operacion-y-mantencion-de-transpaleta-electrica",
         "category": "maquinas",
         "modality": "presencial",
-        "title": "Operación y Mantención de Transpaleta Eléctrica",
-        "shortTitle": "Operación y Mantención de Transpaleta Eléctrica",
+        "title": "Operacion y Mantencion de Transpaleta Electrica",
+        "shortTitle": "Operacion y Mantencion de Transpaleta Electrica",
         "hours": "",
-        "desc": "Operación y Mantención de Transpaleta Eléctrica - Curso técnico especializado.",
+        "desc": "Operacion y Mantencion de Transpaleta Electrica - Curso técnico especializado.",
         "image": "../assets/temario_mantencionYproduccion.jpg",
-        "pdf": "../assets/temarios/Maquinas y Equipos/5.- Operacio╠ün y Mantencio╠ün de Transpaleta Ele╠üctrica.docx"
+        "pdf": "../assets/temarios/Maquinas y Equipos/5.- Operacion y Mantencion de Transpaleta Electrica.docx"
     },
     {
         "id": 20,
         "slug": "operacion-y-mantencion-de-cargador-frontal",
         "category": "maquinas",
         "modality": "presencial",
-        "title": "Operación y Mantención de Cargador Frontal",
-        "shortTitle": "Operación y Mantención de Cargador Frontal",
+        "title": "Operacion y Mantencion de Cargador Frontal",
+        "shortTitle": "Operacion y Mantencion de Cargador Frontal",
         "hours": "",
-        "desc": "Operación y Mantención de Cargador Frontal - Curso técnico especializado.",
+        "desc": "Operacion y Mantencion de Cargador Frontal - Curso técnico especializado.",
         "image": "../assets/temario_mantencionYproduccion.jpg",
-        "pdf": "../assets/temarios/Maquinas y Equipos/6.- Operacio╠ün y Mantencio╠ün de Cargador Frontal.docx"
+        "pdf": "../assets/temarios/Maquinas y Equipos/6.- Operacion y Mantencion de Cargador Frontal.docx"
     },
     {
         "id": 21,
         "slug": "operacion-y-mantencion-de-minicargador---cargador-frontal",
         "category": "maquinas",
         "modality": "presencial",
-        "title": "Operación y Mantención de Minicargador - Cargador Frontal",
-        "shortTitle": "Operación y Mantención de Minicargador - Cargador Frontal",
+        "title": "Operacion y Mantencion de Minicargador - Cargador Frontal",
+        "shortTitle": "Operacion y Mantencion de Minicargador - Cargador Frontal",
         "hours": "",
-        "desc": "Operación y Mantención de Minicargador - Cargador Frontal - Curso técnico especializado.",
+        "desc": "Operacion y Mantencion de Minicargador - Cargador Frontal - Curso técnico especializado.",
         "image": "../assets/temario_mantencionYproduccion.jpg",
-        "pdf": "../assets/temarios/Maquinas y Equipos/7.- Operacio╠ün y Mantencio╠ün de Minicargador - Cargador Frontal.docx"
+        "pdf": "../assets/temarios/Maquinas y Equipos/7.- Operacion y Mantencion de Minicargador - Cargador Frontal.docx"
     },
     {
         "id": 22,
         "slug": "operacion-de-camion-ampliroll",
         "category": "maquinas",
         "modality": "presencial",
-        "title": "Operación de camion Ampliroll",
-        "shortTitle": "Operación de camion Ampliroll",
+        "title": "Operacion de camion Ampliroll",
+        "shortTitle": "Operacion de camion Ampliroll",
         "hours": "",
-        "desc": "Operación de camion Ampliroll - Curso técnico especializado.",
+        "desc": "Operacion de camion Ampliroll - Curso técnico especializado.",
         "image": "../assets/temario_mantencionYproduccion.jpg",
-        "pdf": "../assets/temarios/Maquinas y Equipos/8.- Operacio╠ün de camion Ampliroll.docx"
+        "pdf": "../assets/temarios/Maquinas y Equipos/8.- Operacion de camion Ampliroll.docx"
     },
     {
         "id": 23,
         "slug": "operacion-y-mantencion-de-retroexcavadora",
         "category": "maquinas",
         "modality": "presencial",
-        "title": "Operación y Mantención de Retroexcavadora",
-        "shortTitle": "Operación y Mantención de Retroexcavadora",
+        "title": "Operacion y Mantencion de Retroexcavadora",
+        "shortTitle": "Operacion y Mantencion de Retroexcavadora",
         "hours": "",
-        "desc": "Operación y Mantención de Retroexcavadora - Curso técnico especializado.",
+        "desc": "Operacion y Mantencion de Retroexcavadora - Curso técnico especializado.",
         "image": "../assets/temario_mantencionYproduccion.jpg",
-        "pdf": "../assets/temarios/Maquinas y Equipos/9.- Operacio╠ün y Mantencio╠ün de Retroexcavadora.docx"
+        "pdf": "../assets/temarios/Maquinas y Equipos/9.- Operacion y Mantencion de Retroexcavadora.docx"
     },
     {
         "id": 24,
@@ -304,12 +304,12 @@ const CURSOS_DATA = [
         "slug": "tecnicas-de-primeros-auxilios",
         "category": "seguridad",
         "modality": "presencial",
-        "title": "Técnicas de Primeros Auxilios",
-        "shortTitle": "Técnicas de Primeros Auxilios",
+        "title": "Tecnicas de Primeros Auxilios",
+        "shortTitle": "Tecnicas de Primeros Auxilios",
         "hours": "",
-        "desc": "Técnicas de Primeros Auxilios - Curso técnico especializado.",
+        "desc": "Tecnicas de Primeros Auxilios - Curso técnico especializado.",
         "image": "../assets/temario_todoslostemarios.jpg",
-        "pdf": "../assets/temarios/Seguridad y Prevencion de riesgos/2.- Te╠ücnicas de Primeros Auxilios.docx"
+        "pdf": "../assets/temarios/Seguridad y Prevencion de riesgos/2.- Tecnicas de Primeros Auxilios.docx"
     },
     {
         "id": 27,
@@ -388,35 +388,35 @@ const CURSOS_DATA = [
         "slug": "prevencion-de-riesgos-electricos",
         "category": "seguridad",
         "modality": "presencial",
-        "title": "Prevención de Riesgos Eléctricos",
-        "shortTitle": "Prevención de Riesgos Eléctricos",
+        "title": "Prevencion de Riesgos Electricos",
+        "shortTitle": "Prevencion de Riesgos Electricos",
         "hours": "",
-        "desc": "Prevención de Riesgos Eléctricos - Curso técnico especializado.",
+        "desc": "Prevencion de Riesgos Electricos - Curso técnico especializado.",
         "image": "../assets/temario_todoslostemarios.jpg",
-        "pdf": "../assets/temarios/Seguridad y Prevencion de riesgos/9.- Prevencio╠ün de Riesgos Ele╠üctricos.docx"
+        "pdf": "../assets/temarios/Seguridad y Prevencion de riesgos/9.- Prevencion de Riesgos Electricos.docx"
     },
     {
         "id": 34,
         "slug": "operacion-de-extintores-portatiles",
         "category": "seguridad",
         "modality": "presencial",
-        "title": "Operación de Extintores Portatiles",
-        "shortTitle": "Operación de Extintores Portatiles",
+        "title": "Operacion de Extintores Portatiles",
+        "shortTitle": "Operacion de Extintores Portatiles",
         "hours": "",
-        "desc": "Operación de Extintores Portatiles - Curso técnico especializado.",
+        "desc": "Operacion de Extintores Portatiles - Curso técnico especializado.",
         "image": "../assets/temario_todoslostemarios.jpg",
-        "pdf": "../assets/temarios/Seguridad y Prevencion de riesgos/10.- Operacio╠ün de Extintores Portatiles.docx"
+        "pdf": "../assets/temarios/Seguridad y Prevencion de riesgos/10.- Operacion de Extintores Portatiles.docx"
     },
     {
         "id": 35,
         "slug": "prevencion-de-riesgos-laborales-autocuidado-y-seguridad",
         "category": "seguridad",
         "modality": "presencial",
-        "title": "Prevención de riesgos laborales, autocuidado y seguridad",
-        "shortTitle": "Prevención de riesgos laborales, autocuidado y seguridad",
+        "title": "Prevencion de riesgos laborales, autocuidado y seguridad",
+        "shortTitle": "Prevencion de riesgos laborales, autocuidado y seguridad",
         "hours": "",
-        "desc": "Prevención de riesgos laborales, autocuidado y seguridad - Curso técnico especializado.",
+        "desc": "Prevencion de riesgos laborales, autocuidado y seguridad - Curso técnico especializado.",
         "image": "../assets/temario_todoslostemarios.jpg",
-        "pdf": "../assets/temarios/Seguridad y Prevencion de riesgos/11.- Prevencio╠ün de riesgos laborales, autocuidado y seguridad.docx"
+        "pdf": "../assets/temarios/Seguridad y Prevencion de riesgos/11.- Prevencion de riesgos laborales, autocuidado y seguridad.docx"
     }
 ];
