@@ -152,7 +152,7 @@ ul {
 .btn--whatsapp {
     background-color: #25D366;
     color: white;
-    border-color: #25D366;
+    border: 1px solid #25D366;
 }
 
 .btn--whatsapp:hover {
@@ -163,9 +163,21 @@ ul {
 .btn--secondary {
     background-color: var(--c-accent);
     color: white;
+    border: 1px solid var(--c-accent);
 }
 .btn--secondary:hover {
     background-color: var(--c-accent-hover);
+    border-color: var(--c-accent-hover);
+}
+
+.btn--primary {
+    background-color: var(--c-primary);
+    color: white;
+    border: 1px solid var(--c-primary);
+}
+
+.btn--primary:hover {
+    background-color: var(--c-primary-dark);
 }
 
 .btn--outline {
@@ -1120,6 +1132,26 @@ ul {
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-lg);
     z-index: 10;
+    padding: 1.5rem;
+}
+
+.sticky-card ul {
+    font-size: 0.95rem;
+}
+
+.sticky-card .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.sticky-card .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 .date-box {
