@@ -1,5 +1,13 @@
 import os
 import re
+from collections import OrderedDict
+
+try:
+    from docx import Document
+    DOCX_AVAILABLE = True
+except ImportError:
+    DOCX_AVAILABLE = False
+    print("⚠️  python-docx no disponible. Instalando...")
 
 # --- CONFIGURATION ---
 
@@ -365,6 +373,32 @@ def generate_slug(title):
     slug = re.sub(r'-+', '-', slug)
     return slug.strip('-')
 
+def extract_syllabus_from_docx(file_path):
+    """Extract syllabus items from DOCX file (lines starting with N°.- )"""
+    if not DOCX_AVAILABLE or not file_path.lower().endswith('.docx'):
+        return []
+    
+    try:
+        doc = Document(file_path)
+        syllabus_items = []
+        
+        # Pattern: "1.- Title" or "1. Title" or "N°.- Title"
+        pattern = re.compile(r'^\s*(\d+)\s*[°.-]+\s*(.+)$')
+        
+        for para in doc.paragraphs:
+            text = para.text.strip()
+            match = pattern.match(text)
+            if match:
+                # Extract just the title part (without the number)
+                title = match.group(2).strip()
+                if title:  # Only add non-empty titles
+                    syllabus_items.append(title)
+        
+        return syllabus_items[:15]  # Limit to first 15 items
+    except Exception as e:
+        print(f"   ⚠️  Error reading {os.path.basename(file_path)}: {str(e)}")
+        return []
+
 def process_category(cat_folder, cat_config):
     """Process all course files in a category folder from /temarios/"""
     folder_path = os.path.join(ASSETS_DIR, cat_folder)
@@ -398,6 +432,10 @@ def process_category(cat_folder, cat_config):
         title = clean_title(raw_name)
         slug = generate_slug(title)
         
+        # Extract syllabus from DOCX file
+        file_full_path = os.path.join(folder_path, filename)
+        syllabus_items = extract_syllabus_from_docx(file_full_path)
+        
         # Build course data
         course_data = {
             'order': order_idx,
@@ -410,7 +448,8 @@ def process_category(cat_folder, cat_config):
             'modality': 'Presencial',  # Default
             'desc_short': f"Curso técnico especializado en {cat_config['name']}.",
             'desc_long': f"El curso de <strong>{title}</strong> está diseñado para entregar competencias técnicas específicas en el área de {cat_config['name']}, orientado a la práctica profesional y el cumplimiento de normativas vigentes.",
-            'objectives': f"Al finalizar este curso, los participantes serán capaces de aplicar las técnicas y conocimientos adquiridos de manera efectiva en su desempeño laboral, cumpliendo con los estándares de calidad y seguridad requeridos."
+            'objectives': f"Al finalizar este curso, los participantes serán capaces de aplicar las técnicas y conocimientos adquiridos de manera efectiva en su desempeño laboral, cumpliendo con los estándares de calidad y seguridad requeridos.",
+            'syllabus': syllabus_items
         }
         
         courses.append(course_data)
@@ -475,6 +514,16 @@ def generate_html(courses):
         # Escape quotes for JSON
         desc_json = course['desc_short'].replace('"', '\\"')
         
+        # Generate syllabus HTML
+        if course.get('syllabus') and len(course['syllabus']) > 0:
+            syllabus_li = '\n'.join([f"                                    <li>{item}</li>" for item in course['syllabus']])
+        else:
+            # Fallback to generic content
+            syllabus_li = """                                    <li>Contenido técnico especializado</li>
+                                    <li>Prácticas aplicadas al entorno laboral</li>
+                                    <li>Normativas y estándares vigentes</li>
+                                    <li>Evaluación de competencias</li>"""
+        
         # Generate HTML
         html = TEMPLATE.format(
             title_meta=title_meta,
@@ -494,7 +543,7 @@ def generate_html(courses):
             hero_image=course['category']['image'],
             description_long=course['desc_long'],
             objectives=course['objectives'],
-            syllabus_li="<li>Contenido técnico especializado</li>\n                                    <li>Prácticas aplicadas al entorno laboral</li>\n                                    <li>Normativas y estándares vigentes</li>\n                                    <li>Evaluación de competencias</li>",
+            syllabus_li=syllabus_li,
             modality=course['modality'],
             pdf_link=pdf_path_rel,
             pdf_text="Descargar PDF",
