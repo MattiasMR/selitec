@@ -7,28 +7,31 @@ ROOT_DIR = os.getcwd()
 ASSETS_DIR = os.path.join(ROOT_DIR, "assets", "temarios")
 OUTPUT_DIR = os.path.join(ROOT_DIR, "curso")
 
-CATEGORIES = {
-    "Computacion": {
-        "slug": "computacion",
-        "name": "Computación",
-        "image": "../../assets/temario_computacion.jpg"
-    },
-    "Mantencion y Produccion": {
+# Ordered dict to control processing order (categories with numbered courses first)
+from collections import OrderedDict
+
+CATEGORIES = OrderedDict([
+    ("Mantencion y Produccion", {
         "slug": "mantencion",
         "name": "Mantención y Producción",
         "image": "../../assets/temario_mantencionYproduccion.jpg"
-    },
-    "Maquinas y Equipos": {
+    }),
+    ("Maquinas y Equipos", {
         "slug": "maquinas",
         "name": "Máquinas y Equipos",
         "image": "../../assets/temario_maquinasYequipos.jpg"
-    },
-    "Seguridad y Prevencion de riesgos": {
+    }),
+    ("Seguridad y Prevencion de riesgos", {
         "slug": "seguridad",
         "name": "Seguridad y Prevención de Riesgos",
         "image": "../../assets/temario_seguridadYprevencion.jpg"
-    }
-}
+    }),
+    ("Computacion", {
+        "slug": "computacion",
+        "name": "Computación",
+        "image": "../../assets/temario_computacion.jpg"
+    })
+])
 
 # --- TEMPLATE ---
 # Based on the user provided attachment (complete structure)

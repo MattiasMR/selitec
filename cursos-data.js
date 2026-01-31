@@ -4,42 +4,6 @@
 const CURSOS_DATA = [
     {
         'id': 1,
-        'slug': 'excel-avanzado',
-        'category': 'computacion',
-        'title': 'Excel Avanzado',
-        'shortTitle': 'Excel Avanzado',
-        'modality': 'presencial',
-        'hours': 'Consultar',
-        'desc': 'Curso técnico especializado en Computación.',
-        'pdf': '../assets/temarios/Computacion/Excel Avanzado .docx',
-        'image': '../assets/temario_computacion.jpg'
-    },
-    {
-        'id': 2,
-        'slug': 'excel-basico',
-        'category': 'computacion',
-        'title': 'Excel Basico',
-        'shortTitle': 'Excel Basico',
-        'modality': 'presencial',
-        'hours': 'Consultar',
-        'desc': 'Curso técnico especializado en Computación.',
-        'pdf': '../assets/temarios/Computacion/Excel Basico.docx',
-        'image': '../assets/temario_computacion.jpg'
-    },
-    {
-        'id': 3,
-        'slug': 'excel-intermedio',
-        'category': 'computacion',
-        'title': 'Excel Intermedio',
-        'shortTitle': 'Excel Intermedio',
-        'modality': 'presencial',
-        'hours': 'Consultar',
-        'desc': 'Curso técnico especializado en Computación.',
-        'pdf': '../assets/temarios/Computacion/Excel Intermedio.docx',
-        'image': '../assets/temario_computacion.jpg'
-    },
-    {
-        'id': 4,
         'slug': 'operacion-de-autoclaves-caldera-de-calefaccion-e-industrial',
         'category': 'mantencion',
         'title': 'Operacion de Autoclaves, caldera de calefaccion e industrial',
@@ -51,7 +15,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_mantencionYproduccion.jpg'
     },
     {
-        'id': 5,
+        'id': 2,
         'slug': 'operacion-de-autoclaves',
         'category': 'mantencion',
         'title': 'Operacion de Autoclaves',
@@ -63,7 +27,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_mantencionYproduccion.jpg'
     },
     {
-        'id': 6,
+        'id': 3,
         'slug': 'operacion-de-calderas-de-fluidos-termicos',
         'category': 'mantencion',
         'title': 'Operacion de Calderas de Fluidos Termicos',
@@ -75,7 +39,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_mantencionYproduccion.jpg'
     },
     {
-        'id': 7,
+        'id': 4,
         'slug': 'metrologia-ajustes-y-tolerancias',
         'category': 'mantencion',
         'title': 'Metrologia, Ajustes y Tolerancias',
@@ -87,7 +51,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_mantencionYproduccion.jpg'
     },
     {
-        'id': 8,
+        'id': 5,
         'slug': 'soldadura-al-arco',
         'category': 'mantencion',
         'title': 'Soldadura al Arco',
@@ -99,7 +63,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_mantencionYproduccion.jpg'
     },
     {
-        'id': 9,
+        'id': 6,
         'slug': 'soldadura-tig-mig',
         'category': 'mantencion',
         'title': 'Soldadura TIG - MIG',
@@ -111,7 +75,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_mantencionYproduccion.jpg'
     },
     {
-        'id': 10,
+        'id': 7,
         'slug': 'mecanica-mantencion-maquinas-y-equipos-industriales',
         'category': 'mantencion',
         'title': 'Mecanica, Mantencion Maquinas y Equipos Industriales',
@@ -123,7 +87,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_mantencionYproduccion.jpg'
     },
     {
-        'id': 11,
+        'id': 8,
         'slug': 'instalacion-electrica-domiciliaria',
         'category': 'mantencion',
         'title': 'Instalacion electrica domiciliaria',
@@ -135,7 +99,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_mantencionYproduccion.jpg'
     },
     {
-        'id': 12,
+        'id': 9,
         'slug': 'administracion-de-bodegas',
         'category': 'mantencion',
         'title': 'Administracion de Bodegas',
@@ -147,7 +111,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_mantencionYproduccion.jpg'
     },
     {
-        'id': 13,
+        'id': 10,
         'slug': 'hidrauica-industrial',
         'category': 'mantencion',
         'title': 'Hidrauica Industrial',
@@ -159,7 +123,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_mantencionYproduccion.jpg'
     },
     {
-        'id': 14,
+        'id': 11,
         'slug': 'neumatica-basica',
         'category': 'mantencion',
         'title': 'Neumatica Basica',
@@ -171,7 +135,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_mantencionYproduccion.jpg'
     },
     {
-        'id': 15,
+        'id': 12,
         'slug': 'operacion-y-mantencion-de-gruas-horquillas',
         'category': 'maquinas',
         'title': 'Operacion y Mantencion de Gruas Horquillas',
@@ -183,7 +147,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_maquinasYequipos.jpg'
     },
     {
-        'id': 16,
+        'id': 13,
         'slug': 'operacion-y-mantencion-apiladores-electricos',
         'category': 'maquinas',
         'title': 'Operacion y Mantencion Apiladores Electricos',
@@ -195,7 +159,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_maquinasYequipos.jpg'
     },
     {
-        'id': 17,
+        'id': 14,
         'slug': 'operacion-de-alza-hombre-y-trabajos-en-altura',
         'category': 'maquinas',
         'title': 'Operacion de Alza Hombre y Trabajos en Altura',
@@ -207,7 +171,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_maquinasYequipos.jpg'
     },
     {
-        'id': 18,
+        'id': 15,
         'slug': 'operacion-y-mantencion-de-puente-gruas',
         'category': 'maquinas',
         'title': 'Operacion y mantencion de puente gruas',
@@ -219,7 +183,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_maquinasYequipos.jpg'
     },
     {
-        'id': 19,
+        'id': 16,
         'slug': 'operacion-y-mantencion-de-transpaleta-electrica',
         'category': 'maquinas',
         'title': 'Operacion y Mantencion de Transpaleta Electrica',
@@ -231,7 +195,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_maquinasYequipos.jpg'
     },
     {
-        'id': 20,
+        'id': 17,
         'slug': 'operacion-y-mantencion-de-cargador-frontal',
         'category': 'maquinas',
         'title': 'Operacion y Mantencion de Cargador Frontal',
@@ -243,7 +207,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_maquinasYequipos.jpg'
     },
     {
-        'id': 21,
+        'id': 18,
         'slug': 'operacion-y-mantencion-de-minicargador-cargador-frontal',
         'category': 'maquinas',
         'title': 'Operacion y Mantencion de Minicargador - Cargador Frontal',
@@ -255,7 +219,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_maquinasYequipos.jpg'
     },
     {
-        'id': 22,
+        'id': 19,
         'slug': 'operacion-de-camion-ampliroll',
         'category': 'maquinas',
         'title': 'Operacion de camion Ampliroll',
@@ -267,7 +231,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_maquinasYequipos.jpg'
     },
     {
-        'id': 23,
+        'id': 20,
         'slug': 'operacion-y-mantencion-de-retroexcavadora',
         'category': 'maquinas',
         'title': 'Operacion y Mantencion de Retroexcavadora',
@@ -279,7 +243,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_maquinasYequipos.jpg'
     },
     {
-        'id': 24,
+        'id': 21,
         'slug': 'rigger',
         'category': 'maquinas',
         'title': 'Rigger',
@@ -291,7 +255,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_maquinasYequipos.jpg'
     },
     {
-        'id': 25,
+        'id': 22,
         'slug': 'seguridad-en-trabajo-de-altura',
         'category': 'seguridad',
         'title': 'Seguridad en Trabajo de Altura',
@@ -303,7 +267,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_seguridadYprevencion.jpg'
     },
     {
-        'id': 26,
+        'id': 23,
         'slug': 'tecnicas-de-primeros-auxilios',
         'category': 'seguridad',
         'title': 'Tecnicas de Primeros Auxilios',
@@ -315,7 +279,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_seguridadYprevencion.jpg'
     },
     {
-        'id': 27,
+        'id': 24,
         'slug': 'uso-y-manejo-de-extintores',
         'category': 'seguridad',
         'title': 'Uso y Manejo de Extintores',
@@ -327,7 +291,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_seguridadYprevencion.jpg'
     },
     {
-        'id': 28,
+        'id': 25,
         'slug': 'bpm',
         'category': 'seguridad',
         'title': 'BPM',
@@ -339,7 +303,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_seguridadYprevencion.jpg'
     },
     {
-        'id': 29,
+        'id': 26,
         'slug': 'food-defense',
         'category': 'seguridad',
         'title': 'Food Defense',
@@ -351,7 +315,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_seguridadYprevencion.jpg'
     },
     {
-        'id': 30,
+        'id': 27,
         'slug': 'trabajo-en-espacios-confinados',
         'category': 'seguridad',
         'title': 'Trabajo en espacios confinados',
@@ -363,7 +327,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_seguridadYprevencion.jpg'
     },
     {
-        'id': 31,
+        'id': 28,
         'slug': 'entrenamiento-de-brigadas-de-emergencia',
         'category': 'seguridad',
         'title': 'Entrenamiento de Brigadas de Emergencia',
@@ -375,7 +339,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_seguridadYprevencion.jpg'
     },
     {
-        'id': 32,
+        'id': 29,
         'slug': 'manejo-de-residuos-peligrosos',
         'category': 'seguridad',
         'title': 'Manejo de residuos peligrosos',
@@ -387,7 +351,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_seguridadYprevencion.jpg'
     },
     {
-        'id': 33,
+        'id': 30,
         'slug': 'prevencion-de-riesgos-electricos',
         'category': 'seguridad',
         'title': 'Prevencion de Riesgos Electricos',
@@ -399,7 +363,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_seguridadYprevencion.jpg'
     },
     {
-        'id': 34,
+        'id': 31,
         'slug': 'operacion-de-extintores-portatiles',
         'category': 'seguridad',
         'title': 'Operacion de Extintores Portatiles',
@@ -411,7 +375,7 @@ const CURSOS_DATA = [
         'image': '../assets/temario_seguridadYprevencion.jpg'
     },
     {
-        'id': 35,
+        'id': 32,
         'slug': 'prevencion-de-riesgos-laborales-autocuidado-y-seguridad',
         'category': 'seguridad',
         'title': 'Prevencion de riesgos laborales, autocuidado y seguridad',
@@ -421,5 +385,41 @@ const CURSOS_DATA = [
         'desc': 'Curso técnico especializado en Seguridad y Prevención de Riesgos.',
         'pdf': '../assets/temarios/Seguridad y Prevencion de riesgos/11.- Prevencion de riesgos laborales, autocuidado y seguridad.docx',
         'image': '../assets/temario_seguridadYprevencion.jpg'
+    },
+    {
+        'id': 33,
+        'slug': 'excel-avanzado',
+        'category': 'computacion',
+        'title': 'Excel Avanzado',
+        'shortTitle': 'Excel Avanzado',
+        'modality': 'presencial',
+        'hours': 'Consultar',
+        'desc': 'Curso técnico especializado en Computación.',
+        'pdf': '../assets/temarios/Computacion/Excel Avanzado .docx',
+        'image': '../assets/temario_computacion.jpg'
+    },
+    {
+        'id': 34,
+        'slug': 'excel-basico',
+        'category': 'computacion',
+        'title': 'Excel Basico',
+        'shortTitle': 'Excel Basico',
+        'modality': 'presencial',
+        'hours': 'Consultar',
+        'desc': 'Curso técnico especializado en Computación.',
+        'pdf': '../assets/temarios/Computacion/Excel Basico.docx',
+        'image': '../assets/temario_computacion.jpg'
+    },
+    {
+        'id': 35,
+        'slug': 'excel-intermedio',
+        'category': 'computacion',
+        'title': 'Excel Intermedio',
+        'shortTitle': 'Excel Intermedio',
+        'modality': 'presencial',
+        'hours': 'Consultar',
+        'desc': 'Curso técnico especializado en Computación.',
+        'pdf': '../assets/temarios/Computacion/Excel Intermedio.docx',
+        'image': '../assets/temario_computacion.jpg'
     }
 ];
