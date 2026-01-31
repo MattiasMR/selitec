@@ -369,23 +369,25 @@ def process_category(cat_folder, cat_config):
         print(f"⚠️  Category folder not found: {folder_path}")
         return []
 
-    # Get all valid course files
-    files = [f for f in os.listdir(folder_path) 
+    # Get all valid course files (exclude system files)
+    all_files = os.listdir(folder_path)
+    files = [f for f in all_files
              if f.lower().endswith(('.docx', '.doc', '.pdf')) 
              and not f.startswith('~$')
-             and not f.startswith('.')]
+             and not f.startswith('.')
+             and f != '.DS_Store']
     
     courses = []
     
     for filename in files:
-        # Extract order from numeric prefix
+        # Extract order from numeric prefix (MUST match at start)
         match = re.match(r'^(\d+)[-.\s]+(.*)$', filename)
         if match:
             order_idx = int(match.group(1))
             raw_name = match.group(2)
         else:
-            # No number = goes to end, alphabetical
-            order_idx = 9999
+            # No number = goes to end, use alphabetical with high number
+            order_idx = 10000
             raw_name = filename
         
         # Extract metadata from filename
