@@ -120,8 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const coursesGrid = document.getElementById('courses-grid');
     
     if (coursesGrid) {
-        // Use coursesData from cursos-data.js (ordenado alfabéticamente por defecto)
-        const coursesData = typeof CURSOS_DATA !== 'undefined' ? [...CURSOS_DATA].sort((a, b) => a.title.localeCompare(b.title)) : [];
+        // Use coursesData from cursos-data.js (mantener orden original por ID)
+        const coursesData = typeof CURSOS_DATA !== 'undefined' ? [...CURSOS_DATA] : [];
 
         const renderCourses = (courses) => {
             coursesGrid.innerHTML = '';
