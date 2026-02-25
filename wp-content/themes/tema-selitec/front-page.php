@@ -100,56 +100,54 @@ get_header();
             </div>
 
             <div class="courses-grid">
-                <article class="course-card">
-                    <div class="course-card__image-container">
-                        <img src="<?php echo esc_url(tema_selitec_asset_url('assets/temario_mantencionYproduccion.jpg')); ?>" alt="Operación de Calderas de Termo fluido" class="course-card__image" width="366" height="191" loading="lazy">
-                    </div>
-                    <div class="course-card__header">
-                        <span class="badge badge--technical">Mantención y Producción</span>
-                        <span class="badge badge--modality">Presencial</span>
-                    </div>
-                    <div class="course-card__body">
-                        <h3 class="course-card__title">Operación de Calderas de Termo fluido</h3>
-                        <p class="course-card__excerpt">Operación de Calderas de Termo fluido (40 horas). Prepárese para el examen de certificación según normativa vigente.</p>
-                    </div>
-                    <div class="course-card__footer">
-                        <a href="<?php echo esc_url(home_url('/curso/operacion-de-calderas-de-fluidos-termicos/')); ?>" class="btn btn--outline btn--full">Ver Temario</a>
-                    </div>
-                </article>
-
-                <article class="course-card">
-                    <div class="course-card__image-container">
-                        <img src="<?php echo esc_url(tema_selitec_asset_url('assets/temario_computacion.jpg')); ?>" alt="Excel Básico" class="course-card__image" width="366" height="191" loading="lazy">
-                    </div>
-                    <div class="course-card__header">
-                        <span class="badge badge--office">Computación</span>
-                        <span class="badge badge--modality">Presencial</span>
-                    </div>
-                    <div class="course-card__body">
-                        <h3 class="course-card__title">Excel Básico</h3>
-                        <p class="course-card__excerpt">Excel Básico (35 horas). Domine hojas de cálculo, funciones básicas y gráficos para optimizar su trabajo administrativo.</p>
-                    </div>
-                    <div class="course-card__footer">
-                        <a href="<?php echo esc_url(home_url('/curso/excel-basico/')); ?>" class="btn btn--outline btn--full">Ver Temario</a>
-                    </div>
-                </article>
-
-                <article class="course-card">
-                    <div class="course-card__image-container">
-                        <img src="<?php echo esc_url(tema_selitec_asset_url('assets/temario_todoslostemarios.jpg')); ?>" alt="Seguridad en Trabajo de Altura" class="course-card__image" width="366" height="191" loading="lazy">
-                    </div>
-                    <div class="course-card__header">
-                        <span class="badge badge--technical">Seguridad</span>
-                        <span class="badge badge--modality">Presencial</span>
-                    </div>
-                    <div class="course-card__body">
-                        <h3 class="course-card__title">Seguridad en Trabajo de Altura</h3>
-                        <p class="course-card__excerpt">Curso orientado a prevención de riesgos en faenas y operaciones en altura.</p>
-                    </div>
-                    <div class="course-card__footer">
-                        <a href="<?php echo esc_url(home_url('/curso/seguridad-en-trabajo-de-altura/')); ?>" class="btn btn--outline btn--full">Ver Temario</a>
-                    </div>
-                </article>
+                <?php
+                // Pick 1 real published course from each of 3 different categories
+                $featured_categories = array('mantencion', 'maquinas', 'seguridad', 'computacion');
+                $shown = 0;
+                foreach ($featured_categories as $cat_slug) {
+                    if ($shown >= 3) break;
+                    $featured_q = new WP_Query(array(
+                        'post_type'      => 'course',
+                        'post_status'    => 'publish',
+                        'posts_per_page' => 1,
+                        'tax_query'      => array(array(
+                            'taxonomy' => 'course_category',
+                            'field'    => 'slug',
+                            'terms'    => $cat_slug,
+                        )),
+                    ));
+                    if ($featured_q->have_posts()) {
+                        $featured_q->the_post();
+                        $fid       = get_the_ID();
+                        $fcat_label = tema_selitec_course_category_label($cat_slug);
+                        $fbadge     = tema_selitec_course_category_badge_class($cat_slug);
+                        $fmodality  = tema_selitec_course_modality_label(tema_selitec_course_modality($fid));
+                        $fimage     = tema_selitec_course_image_url($fid, $cat_slug);
+                        $fsummary   = tema_selitec_course_summary($fid);
+                        $fhours     = tema_selitec_course_hours($fid);
+                        ?>
+                        <article class="course-card">
+                            <div class="course-card__image-container">
+                                <img src="<?php echo esc_url($fimage); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="course-card__image" width="366" height="191" loading="lazy">
+                            </div>
+                            <div class="course-card__header">
+                                <span class="badge <?php echo esc_attr($fbadge); ?>"><?php echo esc_html($fcat_label); ?></span>
+                                <span class="badge badge--modality"><?php echo esc_html($fmodality); ?></span>
+                            </div>
+                            <div class="course-card__body">
+                                <h3 class="course-card__title"><?php the_title(); ?></h3>
+                                <p class="course-card__excerpt"><?php echo esc_html(wp_trim_words($fsummary, 20)); ?></p>
+                            </div>
+                            <div class="course-card__footer">
+                                <a href="<?php the_permalink(); ?>" class="btn btn--outline btn--full">Ver Temario</a>
+                            </div>
+                        </article>
+                        <?php
+                        $shown++;
+                    }
+                    wp_reset_postdata();
+                }
+                ?>
             </div>
         </div>
     </section>

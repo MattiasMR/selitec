@@ -15,6 +15,10 @@ function tema_selitec_setup(): void
     add_theme_support('custom-logo');
     add_theme_support('woocommerce');
 
+    // Prevent WP from treating this as a block theme
+    // (templates/index.html exists only for installer validation)
+    remove_theme_support('block-templates');
+
     register_nav_menus(array(
         'primary' => __('Navegación principal', 'tema-selitec'),
         'top'     => __('Navegación superior', 'tema-selitec'),

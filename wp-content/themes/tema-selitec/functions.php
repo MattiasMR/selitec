@@ -21,6 +21,7 @@ $tema_selitec_includes = array(
     'includes/compat.php',
     'includes/auto-pages.php',
     'includes/event-metaboxes.php',
+    'includes/course-metaboxes.php',
 );
 
 foreach ($tema_selitec_includes as $file) {
