@@ -149,13 +149,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const coursesGrid = document.getElementById('courses-grid');
     
     if (coursesGrid) {
-        // Use coursesData from cursos-data.js (mantener orden original por ID)
-        const coursesData = typeof CURSOS_DATA !== 'undefined' ? [...CURSOS_DATA] : [];
+        // Use coursesData from cursos-data.js or WP-injected inline data.
+        // Filter out any entries missing required fields (ghost-course guard).
+        const rawData = typeof CURSOS_DATA !== 'undefined' ? [...CURSOS_DATA] : [];
+        const coursesData = rawData.filter(c =>
+            c && c.slug && c.title && c.category && c.shortTitle
+        );
 
-        // On WordPress, resolve relative asset paths to the theme URL
+        // On WordPress, resolve relative asset paths to the theme URL.
+        // WP-generated entries already have absolute URLs; static-file entries use '../'.
         const themeUrl = (typeof selitecTheme !== 'undefined') ? selitecTheme.url : '';
         const homeUrl  = (typeof selitecTheme !== 'undefined') ? selitecTheme.home : '';
-        const resolveImage = (img) => themeUrl ? themeUrl + img.replace('../', '') : img;
+        const resolveImage = (img) => {
+            if (!img) return '';
+            if (img.startsWith('http')) return img;          // already absolute (WP)
+            return themeUrl ? themeUrl + img.replace('../', '') : img;
+        };
         const resolveLink  = (slug) => homeUrl ? homeUrl + 'curso/' + slug + '/' : '../curso/' + slug + '/';
 
         const renderCourses = (courses) => {
@@ -170,26 +179,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if(resultCount) resultCount.textContent = courses.length;
 
+            // Category → badge class & label map
+            const CAT_MAP = {
+                maquinas:    { badge: 'badge--technical', label: 'Máquinas y equipos' },
+                mantencion:  { badge: 'badge--technical', label: 'Mantención y producción' },
+                seguridad:   { badge: 'badge--technical', label: 'Seguridad y prevención' },
+                computacion: { badge: 'badge--office',    label: 'Computación' },
+                habilidades: { badge: 'badge--soft',      label: 'Habilidades Blandas' },
+                idiomas:     { badge: 'badge--language',  label: 'Idiomas' },
+            };
+
             courses.forEach(course => {
                 const card = document.createElement('article');
                 card.className = 'course-card';
                 
-                // Determine badge colors based on category
-                let badgeClass = 'badge--technical';
-                let categoryLabel = 'Mantención y Producción';
-                
-                if (course.category === 'computacion') {
-                    badgeClass = 'badge--office';
-                    categoryLabel = 'Computación';
-                }
-                if (course.category === 'habilidades') {
-                    badgeClass = 'badge--soft';
-                    categoryLabel = 'Habilidades Blandas';
-                }
-                if (course.category === 'idiomas') {
-                    badgeClass = 'badge--language';
-                    categoryLabel = 'Idiomas';
-                }
+                const catInfo = CAT_MAP[course.category] || { badge: 'badge--technical', label: course.category };
+                const badgeClass = catInfo.badge;
+                const categoryLabel = catInfo.label;
                 
                 const modalityLabel = course.modality === 'elearning' ? 'E-learning' : 'Presencial';
                 

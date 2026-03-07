@@ -121,7 +121,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (coursesGrid) {
         // Use coursesData from cursos-data.js (mantener orden original por ID)
-        const coursesData = typeof CURSOS_DATA !== 'undefined' ? [...CURSOS_DATA] : [];
+        // Filter out invalid courses: must have title, slug, and category
+        const coursesData = (typeof CURSOS_DATA !== 'undefined' ? [...CURSOS_DATA] : [])
+            .filter(c => c && c.title && c.slug && c.category);
 
         const renderCourses = (courses) => {
             coursesGrid.innerHTML = '';

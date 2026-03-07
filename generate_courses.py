@@ -457,7 +457,13 @@ def process_category(cat_folder, cat_config):
     # Sort by order number, then alphabetically
     courses.sort(key=lambda x: (x['order'], x['title']))
     
-    return courses
+    # Filter out courses without required fields
+    valid = [c for c in courses if c.get('slug') and c.get('title') and c.get('category')]
+    skipped = len(courses) - len(valid)
+    if skipped > 0:
+        print(f"   ⚠️  {skipped} cursos inválidos descartados (sin slug, título o categoría)")
+    
+    return valid
 
 def generate_html(courses):
     """Generate HTML pages for all courses"""

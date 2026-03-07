@@ -48,6 +48,8 @@
     --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
     --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
     
+    --c-primary-dark: #1a1744;  /* Primary hover */
+
     /* Transitions */
     --transition-fast: 0.2s ease;
 }
@@ -68,6 +70,11 @@ body {
     color: var(--c-text-main);
     background-color: var(--c-white);
     -webkit-font-smoothing: antialiased;
+}
+
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
 }
 
 img {
@@ -182,9 +189,11 @@ ul {
 .btn--primary {
     background-color: var(--c-primary);
     color: white;
+    border: 1px solid var(--c-primary);
 }
 .btn--primary:hover {
-    background-color: #1a1744; /* Darker primary */
+    background-color: var(--c-primary-dark);
+    border-color: var(--c-primary-dark);
 }
 
 .btn--whatsapp {
@@ -196,6 +205,7 @@ ul {
 .btn--whatsapp:hover {
     background-color: #128C7E;
     border-color: #128C7E;
+    transform: translateY(-1px);
 }
 
 .btn--secondary {
@@ -206,16 +216,6 @@ ul {
 .btn--secondary:hover {
     background-color: var(--c-accent-hover);
     border-color: var(--c-accent-hover);
-}
-
-.btn--primary {
-    background-color: var(--c-primary);
-    color: white;
-    border: 1px solid var(--c-primary);
-}
-
-.btn--primary:hover {
-    background-color: var(--c-primary-dark);
 }
 
 .btn--outline {
@@ -376,20 +376,22 @@ ul {
 }
 
 .hero__subtitle {
-    font-size: 1.125rem;
     font-size: clamp(1rem, 3vw, 1.25rem);
     max-width: 800px;
-    margin: 0 auto 2rem auto;
+    margin: 0 auto var(--sp-lg) auto;
     color: rgba(255, 255, 255, 0.95);
     line-height: 1.5;
+    opacity: 0.9;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
 }
 
 .hero__actions {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: var(--sp-sm);
     flex-wrap: wrap;
-    margin-top: 1.5rem;
+    margin-bottom: var(--sp-lg);
+    animation: fadeInUp 0.8s ease-out 0.4s backwards;
 }
 
 /* Area Cards with Backgrounds - Enhanced */
@@ -408,7 +410,6 @@ ul {
     transition: transform 0.3s ease;
     border-radius: var(--radius-md);
     text-shadow: 0 2px 4px rgba(0,0,0,0.6);
-    z-index: 1;
 }
 
 .area-card--bg::before {
@@ -419,7 +420,7 @@ ul {
     right: 0;
     bottom: 0;
     background: linear-gradient(to bottom, rgba(38,34,98,0.4), rgba(38,34,98,0.9));
-    z-index: -1;
+    z-index: 1;
     transition: background 0.3s ease;
 }
 
@@ -429,6 +430,11 @@ ul {
 
 .area-card--bg:hover {
     transform: translateY(-5px);
+}
+
+.area-card--bg > * {
+    position: relative;
+    z-index: 2;
 }
 
 .area-title {
@@ -476,27 +482,13 @@ ul {
 
 .course-card__image {
     width: 100%;
-    height: 100%;
+    height: 180px;
     object-fit: cover;
     transition: transform 0.4s ease;
 }
 
 .course-card:hover .course-card__image {
     transform: scale(1.05);
-}
-
-.hero__subtitle {
-    font-size: 1.25rem;
-    margin-bottom: var(--sp-lg);
-    opacity: 0.9;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    animation: fadeInUp 0.8s ease-out 0.2s backwards;
-}
-
-.hero__actions {
-    animation: fadeInUp 0.8s ease-out 0.4s backwards;
 }
 
 @keyframes fadeInDown {
@@ -507,17 +499,6 @@ ul {
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
-}
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.hero__actions {
-    display: flex;
-    gap: var(--sp-sm);
-    justify-content: center;
-    margin-bottom: var(--sp-lg);
-    flex-wrap: wrap;
 }
 
 .hero__trust-badges {
@@ -1447,41 +1428,6 @@ ul {
     }
 }
 
-/* Area Cards with Backgrounds */
-.area-card--bg {
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    color: white;
-    border: none;
-    overflow: hidden;
-    min-height: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2rem; /* Added padding */
-}
-
-.area-card--bg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 1;
-    transition: background 0.3s ease;
-}
-
-.area-card--bg:hover::before {
-    background: rgba(0, 0, 0, 0.4);
-}
-
-.area-card--bg > * {
-    position: relative;
-    z-index: 2;
-}
 
 .area-card--bg .area-title {
     font-size: 1.75rem;
@@ -1497,54 +1443,6 @@ ul {
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* Course Cards with Images */
-.course-card__image {
-    height: 180px;
-    width: 100%;
-    object-fit: cover;
-}
-
-/* Interactive Steps */
-.step-card {
-    background: white;
-    padding: 2rem;
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-sm);
-    text-align: center;
-    position: relative;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.step-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
-}
-
-.step-details {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease, opacity 0.5s ease;
-    opacity: 0;
-}
-
-.step-card:hover .step-details {
-    max-height: 300px;
-    opacity: 1;
-    margin-top: 1rem;
-}
-
-/* WhatsApp Button */
-.btn--whatsapp {
-    background-color: #25D366;
-    color: white;
-    border: none;
-}
-
-.btn--whatsapp:hover {
-    background-color: #128C7E;
-    transform: translateY(-1px);
-}
 
 /* =========================================
    10. COURSE PAGE STYLES

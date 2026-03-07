@@ -27,19 +27,19 @@
     
     /* Typography */
     --font-main: 'Roboto', system-ui, -apple-system, sans-serif;
-    --fs-base: 16px;            /* Accesibilidad: mínimo 16px */
+    --fs-base: 1rem;             /* 16px — Accesibilidad: mínimo 16px */
     --fs-sm: 0.875rem;
     --fs-lg: 1.125rem;
     --fs-xl: 1.25rem;
-    --fs-2xl: 1.5rem;
-    --fs-3xl: 2rem;
+    --fs-2xl: 1.75rem;           /* 28px — section headings */
+    --fs-3xl: 2.25rem;           /* 36px — page titles */
     
     /* Spacing */
     --sp-xs: 0.5rem;
     --sp-sm: 1rem;
     --sp-md: 1.5rem;
     --sp-lg: 2rem;
-    --sp-xl: 3rem;
+    --sp-xl: 3.5rem;
     
     /* UI Elements */
     --radius-sm: 4px;
@@ -59,6 +59,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+html {
+    font-size: 16px !important;   /* Lock rem baseline — prevents WP/plugin overrides */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -97,10 +102,10 @@ ul {
    ========================================= */
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1320px;
     margin: 0 auto;
-    padding-left: var(--sp-sm);
-    padding-right: var(--sp-sm);
+    padding-left: var(--sp-md);
+    padding-right: var(--sp-md);
 }
 
 .section {
@@ -366,8 +371,7 @@ ul {
 }
 
 .hero__title {
-    font-size: 3rem; /* Fallback */
-    font-size: clamp(2rem, 5vw, 3.5rem); /* Responsive typography */
+    font-size: clamp(2.25rem, 5vw, 3.75rem); /* Responsive typography */
     font-weight: 700;
     margin-bottom: var(--sp-sm);
     line-height: 1.2;
