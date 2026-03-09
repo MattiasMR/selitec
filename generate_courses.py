@@ -196,6 +196,9 @@ TEMPLATE = """<!DOCTYPE html>
 
         <section class="course-hero">
             <div class="container">
+                <div class="course-hero__image">
+                    <img src="{hero_image}" alt="{title}">
+                </div>
                 <div class="course-hero__content">
                     <div class="course-hero__badges">
                         <span class="badge badge--technical">{category_name}</span>
@@ -203,12 +206,16 @@ TEMPLATE = """<!DOCTYPE html>
                     </div>
                     <h1 class="course-hero__title">{title}</h1>
                     <p class="course-hero__duration"><i class="fas fa-clock"></i> {hours} horas</p>
-                    <p class="course-hero__description">
-                        {description_short}
-                    </p>
-                </div>
-                <div class="course-hero__image">
-                    <img src="{hero_image}" alt="{title}">
+                    <div class="course-hero__text">
+                        <h2>Descripción del Curso</h2>
+                        <p>
+                            {description_long}
+                        </p>
+                        <h2>Objetivos Generales</h2>
+                        <p>
+                            {objectives}
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -217,20 +224,6 @@ TEMPLATE = """<!DOCTYPE html>
             <div class="container">
                 <div class="course-content__grid">
                     <div class="course-content__main">
-                        <div class="course-description mb-8">
-                            <h2>Descripción del Curso</h2>
-                            <p>
-                                {description_long}
-                            </p>
-                        </div>
-
-                        <div class="course-objectives mb-8">
-                            <h2>Objetivos Generales</h2>
-                            <p>
-                                {objectives}
-                            </p>
-                        </div>
-
                         <div class="course-syllabus">
                             <h2>Contenido del Curso</h2>
                             <div class="syllabus-content">

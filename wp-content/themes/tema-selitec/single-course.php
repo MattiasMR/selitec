@@ -22,9 +22,10 @@ $category_label = tema_selitec_course_category_label($category_slug);
 $modality = tema_selitec_course_modality($post_id);
 $modality_label = tema_selitec_course_modality_label($modality);
 $hours = tema_selitec_course_hours($post_id);
-$summary = tema_selitec_course_summary($post_id);
 $syllabus_html = tema_selitec_course_syllabus_html($post_id);
 $pdf_url = tema_selitec_course_pdf_url($post_id);
+$description = tema_selitec_course_description($post_id);
+$summary = wp_strip_all_tags($description);
 $objectives = tema_selitec_course_meta_first($post_id, array('course_objectives', 'objectives', 'selitec_objectives'));
 if ($objectives === '') {
     $objectives = 'Al finalizar este curso, los participantes aplican técnicas y conocimientos adquiridos en su desempeño laboral bajo estándares de calidad y seguridad.';
@@ -77,6 +78,9 @@ get_header();
 
     <section class="course-hero">
         <div class="container">
+            <div class="course-hero__image">
+                <img src="<?php echo esc_url(tema_selitec_course_image_url($post_id, $category_slug)); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" width="640" height="426" loading="eager">
+            </div>
             <div class="course-hero__content">
                 <div class="course-hero__badges">
                     <span class="badge <?php echo esc_attr(tema_selitec_course_category_badge_class($category_slug)); ?>"><?php echo esc_html($category_label); ?></span>
@@ -84,10 +88,12 @@ get_header();
                 </div>
                 <h1 class="course-hero__title"><?php the_title(); ?></h1>
                 <p class="course-hero__duration"><i class="fas fa-clock"></i> <?php echo esc_html($hours); ?> horas</p>
-                <p class="course-hero__description"><?php echo esc_html($summary); ?></p>
-            </div>
-            <div class="course-hero__image">
-                <img src="<?php echo esc_url(tema_selitec_course_image_url($post_id, $category_slug)); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" width="640" height="426" loading="eager">
+                <div class="course-hero__text">
+                    <h2>Descripción del Curso</h2>
+                    <p><?php echo wp_kses_post($description); ?></p>
+                    <h2>Objetivos Generales</h2>
+                    <p><?php echo esc_html($objectives); ?></p>
+                </div>
             </div>
         </div>
     </section>
@@ -96,16 +102,6 @@ get_header();
         <div class="container">
             <div class="course-content__grid">
                 <div class="course-content__main">
-                    <div class="course-description mb-8">
-                        <h2>Descripción del Curso</h2>
-                        <p>El curso de <strong><?php the_title(); ?></strong> está diseñado para entregar competencias técnicas específicas orientadas a la práctica profesional y al cumplimiento de estándares operativos.</p>
-                    </div>
-
-                    <div class="course-objectives mb-8">
-                        <h2>Objetivos Generales</h2>
-                        <p><?php echo esc_html($objectives); ?></p>
-                    </div>
-
                     <div class="course-syllabus">
                         <h2>Contenido del Curso</h2>
                         <div class="syllabus-content">

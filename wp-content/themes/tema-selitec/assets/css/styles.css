@@ -1124,39 +1124,6 @@ ul {
 /* =========================================
    9. PDP (PRODUCT DETAIL PAGE)
    ========================================= */
-.course-hero {
-    background-color: var(--c-primary);
-    color: white;
-    padding: 2.5rem 0;
-}
-
-.course-hero__badges {
-    margin-bottom: var(--sp-sm);
-    display: flex;
-    gap: 0.5rem;
-}
-
-.course-hero__title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: var(--sp-sm);
-    line-height: 1.2;
-}
-
-.course-hero__subtitle {
-    font-size: 1.2rem;
-    opacity: 0.9;
-    max-width: 800px;
-    margin-bottom: var(--sp-md);
-}
-
-.course-hero__meta {
-    display: flex;
-    gap: var(--sp-lg);
-    font-size: 1rem;
-    opacity: 0.8;
-}
-
 .pdp-layout {
     display: grid;
     grid-template-columns: 1fr 350px;
@@ -1688,13 +1655,14 @@ ul {
 .course-hero {
     padding: var(--sp-xl) 0;
     background-color: white;
+    color: var(--c-text-main);
 }
 
 .course-hero .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--sp-xl);
-    align-items: center;
+    align-items: start;
 }
 
 .course-hero__badges {
@@ -1755,6 +1723,27 @@ ul {
     height: auto;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
+}
+
+.course-hero__text {
+    margin-top: var(--sp-md);
+}
+
+.course-hero__text h2 {
+    font-size: 1.25rem;
+    color: var(--c-primary);
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.course-hero__text h2:first-child {
+    margin-top: 0;
+}
+
+.course-hero__text p {
+    line-height: 1.7;
+    color: var(--c-text-main);
 }
 
 /* Course Content Layout */

@@ -151,6 +151,15 @@ function tema_selitec_course_syllabus_html(int $post_id): string
     return '<p>Temario disponible bajo solicitud en contacto@selitec.cl.</p>';
 }
 
+function tema_selitec_course_description(int $post_id): string
+{
+    return tema_selitec_course_meta_first(
+        $post_id,
+        array('course_description'),
+        'El curso de <strong>' . esc_html(get_the_title($post_id)) . '</strong> está diseñado para entregar competencias técnicas específicas orientadas a la práctica profesional y al cumplimiento de estándares operativos.'
+    );
+}
+
 function tema_selitec_course_pdf_url(int $post_id): string
 {
     $pdf = tema_selitec_course_meta_first(

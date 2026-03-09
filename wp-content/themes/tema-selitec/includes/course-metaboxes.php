@@ -36,11 +36,11 @@ function tema_selitec_course_details_render(WP_Post $post): void
 {
     wp_nonce_field('tema_selitec_course_save', 'tema_selitec_course_nonce');
 
-    $modality   = get_post_meta($post->ID, 'course_modality', true);
-    $hours      = get_post_meta($post->ID, 'course_hours', true);
-    $objectives = get_post_meta($post->ID, 'course_objectives', true);
-    $syllabus   = get_post_meta($post->ID, 'syllabus_html', true);
-    $pdf        = get_post_meta($post->ID, 'pdf_url', true);
+    $modality    = get_post_meta($post->ID, 'course_modality', true);
+    $hours       = get_post_meta($post->ID, 'course_hours', true);
+    $description = get_post_meta($post->ID, 'course_description', true);
+    $syllabus    = get_post_meta($post->ID, 'syllabus_html', true);
+    $pdf         = get_post_meta($post->ID, 'pdf_url', true);
 
     ?>
     <table class="form-table"><tbody>
@@ -62,14 +62,14 @@ function tema_selitec_course_details_render(WP_Post $post): void
             </td>
         </tr>
         <tr>
-            <th scope="row"><label for="course_objectives">Objetivos Generales</label></th>
+            <th scope="row"><label for="course_description">Descripción del Curso</label></th>
             <td>
-                <textarea id="course_objectives" name="course_objectives" rows="5" class="large-text"><?php echo esc_textarea($objectives); ?></textarea>
-                <p class="description">Objetivos generales del curso. Si se deja vacío se usa un texto por defecto.</p>
+                <textarea id="course_description" name="course_description" rows="5" class="large-text"><?php echo esc_textarea($description); ?></textarea>
+                <p class="description">Descripción y objetivos del curso que aparecen junto a la imagen. Si se deja vacío se usa un texto por defecto.</p>
             </td>
         </tr>
         <tr>
-            <th scope="row"><label for="syllabus_html">Contenido / Temario (HTML)</label></th>
+            <th scope="row"><label for="syllabus_html">Temario (HTML)</label></th>
             <td>
                 <?php
                 wp_editor($syllabus, 'syllabus_html', array(
@@ -92,8 +92,8 @@ function tema_selitec_course_details_render(WP_Post $post): void
         </tr>
     </tbody></table>
     <p style="margin-top: 1rem; color: #666;">
-        <strong>Recuerde:</strong> Use la <em>Imagen destacada</em> (columna derecha) para la imagen del curso,
-        el <em>Extracto</em> para la descripción corta, y asigne una <em>Categoría de curso</em>.
+        <strong>Recuerde:</strong> Use la <em>Imagen destacada</em> (columna derecha) para la imagen del curso
+        y asigne una <em>Categoría de curso</em>.
     </p>
     <?php
 }
@@ -116,7 +116,7 @@ function tema_selitec_course_save(int $post_id): void
     }
 
     // Text fields
-    $text_keys = array('course_modality', 'course_hours', 'course_objectives', 'pdf_url');
+    $text_keys = array('course_modality', 'course_hours', 'course_description', 'pdf_url');
     foreach ($text_keys as $key) {
         if (isset($_POST[$key])) {
             update_post_meta($post_id, $key, sanitize_text_field(wp_unslash($_POST[$key])));

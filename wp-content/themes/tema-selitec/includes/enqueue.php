@@ -91,7 +91,7 @@ function tema_selitec_enqueue_assets(): void
     ';
     wp_add_inline_style('tema-selitec-styles', $wp_overrides);
 
-    // Build CURSOS_DATA from real published WP posts (no ghost courses).
+    // Build CURSOS_DATA exclusively from published WP courses.
     $wp_courses = get_posts(array(
         'post_type'      => 'course',
         'post_status'    => 'publish',
@@ -100,19 +100,16 @@ function tema_selitec_enqueue_assets(): void
         'order'          => 'ASC',
     ));
 
-    $category_map = tema_selitec_course_category_map();
     $cursos_js = array();
     foreach ($wp_courses as $idx => $c) {
         $cid  = $c->ID;
         $slug = $c->post_name;
         $cat  = tema_selitec_course_category_slug($cid);
-        $cat_label = isset($category_map[$cat]) ? $category_map[$cat] : ucwords($cat);
         $mod  = tema_selitec_course_modality($cid);
         $hrs  = tema_selitec_course_hours($cid);
         $desc = tema_selitec_course_summary($cid);
         $img  = tema_selitec_course_image_url($cid, $cat);
 
-        // Skip courses missing required fields
         if (empty($slug) || empty($c->post_title)) {
             continue;
         }
@@ -130,25 +127,12 @@ function tema_selitec_enqueue_assets(): void
         );
     }
 
-    // If there are WP courses, inject them directly; otherwise fall back to static file.
-    if (!empty($cursos_js)) {
-        wp_register_script('tema-selitec-cursos-data', '', array(), TEMA_SELITEC_VERSION, true);
-        wp_enqueue_script('tema-selitec-cursos-data');
-        wp_add_inline_script(
-            'tema-selitec-cursos-data',
-            'const CURSOS_DATA = ' . wp_json_encode($cursos_js, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . ';'
-        );
-    } else {
-        // Fallback: static file (for sites that haven't migrated courses yet)
-        $data_path = TEMA_SELITEC_DIR . '/assets/js/cursos-data.js';
-        wp_enqueue_script(
-            'tema-selitec-cursos-data',
-            tema_selitec_asset_url('assets/js/cursos-data.js'),
-            array(),
-            file_exists($data_path) ? (string) filemtime($data_path) : TEMA_SELITEC_VERSION,
-            true
-        );
-    }
+    wp_register_script('tema-selitec-cursos-data', '', array(), TEMA_SELITEC_VERSION, true);
+    wp_enqueue_script('tema-selitec-cursos-data');
+    wp_add_inline_script(
+        'tema-selitec-cursos-data',
+        'const CURSOS_DATA = ' . wp_json_encode($cursos_js, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . ';'
+    );
 
     $app_path = TEMA_SELITEC_DIR . '/assets/js/app.js';
     wp_enqueue_script(
