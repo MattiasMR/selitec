@@ -183,21 +183,25 @@ document.addEventListener('DOMContentLoaded', () => {
             const CAT_MAP = {
                 maquinas:    { badge: 'badge--technical', label: 'Máquinas y equipos' },
                 mantencion:  { badge: 'badge--technical', label: 'Mantención y producción' },
-                seguridad:   { badge: 'badge--technical', label: 'Seguridad y prevención' },
+                seguridad:   { badge: 'badge--technical', label: 'Seguridad y prevención de riesgos' },
                 computacion: { badge: 'badge--office',    label: 'Computación' },
-                habilidades: { badge: 'badge--soft',      label: 'Habilidades Blandas' },
-                idiomas:     { badge: 'badge--language',  label: 'Idiomas' },
             };
+
+            const formatCategorySlug = (slug = '') => slug
+                .replace(/[-_]+/g, ' ')
+                .replace(/\b\w/g, char => char.toUpperCase());
 
             courses.forEach(course => {
                 const card = document.createElement('article');
                 card.className = 'course-card';
                 
-                const catInfo = CAT_MAP[course.category] || { badge: 'badge--technical', label: course.category };
-                const badgeClass = catInfo.badge;
-                const categoryLabel = catInfo.label;
+                const catInfo = CAT_MAP[course.category] || { badge: 'badge--technical', label: formatCategorySlug(course.category) };
+                const badgeClass = course.categoryBadge || catInfo.badge;
+                const categoryLabel = course.categoryLabel || catInfo.label;
                 
                 const modalityLabel = course.modality === 'elearning' ? 'E-learning' : 'Presencial';
+                const description = (course.desc || '').trim();
+                const excerpt = description ? `${description.substring(0, 120)}...` : 'Curso técnico especializado de Selitec Capacitación.';
                 
                 const imgSrc = resolveImage(course.image);
                 const courseUrl = resolveLink(course.slug);
@@ -209,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="course-card__body">
                         <h3 class="course-card__title"><a href="${courseUrl}">${course.shortTitle}</a></h3>
-                        <p class="course-card__excerpt">${course.desc.substring(0, 120)}...</p>
+                        <p class="course-card__excerpt">${excerpt}</p>
                         <ul class="course-card__meta">
                             <li><i class="far fa-clock" aria-hidden="true"></i> ${course.hours} Horas</li>
                             <li><i class="fas fa-laptop" aria-hidden="true"></i> ${modalityLabel}</li>
@@ -234,9 +238,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 .map(cb => cb.value);
 
             const filtered = coursesData.filter(course => {
-                const matchesSearch = course.title.toLowerCase().includes(searchInput) || 
-                                      course.desc.toLowerCase().includes(searchInput) ||
-                                      course.shortTitle.toLowerCase().includes(searchInput);
+                const title = (course.title || '').toLowerCase();
+                const desc = (course.desc || '').toLowerCase();
+                const shortTitle = (course.shortTitle || '').toLowerCase();
+                const matchesSearch = title.includes(searchInput) || 
+                                      desc.includes(searchInput) ||
+                                      shortTitle.includes(searchInput);
                 const matchesCategory = selectedCategories.includes(course.category);
                 const matchesModality = selectedModalities.includes(course.modality);
                 

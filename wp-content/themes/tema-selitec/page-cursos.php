@@ -4,7 +4,23 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-$category_map = tema_selitec_course_category_map();
+$category_terms = get_terms(array(
+    'taxonomy'   => 'course_category',
+    'hide_empty' => false,
+    'orderby'    => 'name',
+    'order'      => 'ASC',
+));
+
+$category_options = array();
+if (!is_wp_error($category_terms)) {
+    foreach ($category_terms as $term) {
+        $category_options[$term->slug] = $term->name;
+    }
+}
+
+if (empty($category_options)) {
+    $category_options = tema_selitec_course_category_map();
+}
 
 get_header();
 ?>
@@ -29,7 +45,7 @@ get_header();
                 <div class="filter-group">
                     <h3 class="filter-title">Categoría</h3>
                     <ul class="filter-list" id="category-filters">
-                        <?php foreach ($category_map as $slug => $label) : ?>
+                        <?php foreach ($category_options as $slug => $label) : ?>
                             <li>
                                 <label class="checkbox-label">
                                     <input type="checkbox" value="<?php echo esc_attr($slug); ?>" checked>

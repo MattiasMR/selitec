@@ -9,10 +9,8 @@ function tema_selitec_course_category_map(): array
     return array(
         'maquinas' => 'Máquinas y equipos',
         'mantencion' => 'Mantención y producción',
-        'seguridad' => 'Seguridad y prevención',
+        'seguridad' => 'Seguridad y prevención de riesgos',
         'computacion' => 'Computación',
-        'habilidades' => 'Habilidades blandas',
-        'idiomas' => 'Idiomas',
     );
 }
 
@@ -42,14 +40,6 @@ function tema_selitec_course_category_badge_class(string $slug): string
         return 'badge--office';
     }
 
-    if ($slug === 'habilidades') {
-        return 'badge--soft';
-    }
-
-    if ($slug === 'idiomas') {
-        return 'badge--language';
-    }
-
     return 'badge--technical';
 }
 
@@ -60,8 +50,6 @@ function tema_selitec_course_fallback_image(string $category_slug): string
         'mantencion' => 'assets/temario_mantencionYproduccion.jpg',
         'seguridad' => 'assets/temario_seguridadYprevencion.jpg',
         'computacion' => 'assets/temario_computacion.jpg',
-        'habilidades' => 'assets/temario_todoslostemarios.jpg',
-        'idiomas' => 'assets/temario_todoslostemarios.jpg',
     );
 
     return tema_selitec_asset_url($map[$category_slug] ?? 'assets/temario_todoslostemarios.jpg');

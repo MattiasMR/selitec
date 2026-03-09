@@ -105,6 +105,11 @@ function tema_selitec_enqueue_assets(): void
         $cid  = $c->ID;
         $slug = $c->post_name;
         $cat  = tema_selitec_course_category_slug($cid);
+        $category_terms = wp_get_post_terms($cid, 'course_category');
+        $cat_label = (!is_wp_error($category_terms) && !empty($category_terms) && isset($category_terms[0]->name))
+            ? (string) $category_terms[0]->name
+            : tema_selitec_course_category_label($cat);
+        $cat_badge = tema_selitec_course_category_badge_class($cat);
         $mod  = tema_selitec_course_modality($cid);
         $hrs  = tema_selitec_course_hours($cid);
         $desc = tema_selitec_course_summary($cid);
@@ -118,6 +123,8 @@ function tema_selitec_enqueue_assets(): void
             'id'         => $idx + 1,
             'slug'       => $slug,
             'category'   => $cat,
+            'categoryLabel' => $cat_label,
+            'categoryBadge' => $cat_badge,
             'title'      => $c->post_title,
             'shortTitle' => $c->post_title,
             'modality'   => $mod,

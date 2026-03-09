@@ -1665,6 +1665,11 @@ ul {
     align-items: start;
 }
 
+.course-hero .container::before,
+.course-hero .container::after {
+    display: none;
+}
+
 .course-hero__badges {
     display: flex;
     gap: var(--sp-sm);
