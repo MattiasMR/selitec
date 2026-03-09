@@ -75,9 +75,17 @@ function tema_selitec_restrict_course_category_insert($term, $taxonomy)
         return $term;
     }
 
-    $normalized = sanitize_title($term);
     $allowed = tema_selitec_allowed_course_categories();
+
+    // Check if the sanitized name matches an allowed slug key.
+    $normalized = sanitize_title($term);
     if (isset($allowed[$normalized])) {
+        return $term;
+    }
+
+    // Check if the term name matches an allowed display name
+    // (wp_insert_term passes the name, not the slug).
+    if (in_array($term, $allowed, true)) {
         return $term;
     }
 
