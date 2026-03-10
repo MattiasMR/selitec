@@ -96,8 +96,7 @@ function tema_selitec_enqueue_assets(): void
         'post_type'      => 'course',
         'post_status'    => 'publish',
         'posts_per_page' => -1,
-        'orderby'        => 'title',
-        'order'          => 'ASC',
+        'orderby'        => array('menu_order' => 'ASC', 'title' => 'ASC'),
     ));
 
     $cursos_js = array();

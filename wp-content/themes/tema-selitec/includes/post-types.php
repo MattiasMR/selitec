@@ -23,7 +23,7 @@ function tema_selitec_register_post_types(): void
         'menu_icon'    => 'dashicons-welcome-learn-more',
         'rewrite'      => array('slug' => 'curso', 'with_front' => false),
         'has_archive'  => false,
-        'supports'     => array('title', 'editor', 'excerpt', 'thumbnail', 'revisions'),
+        'supports'     => array('title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'page-attributes'),
     ));
 
     register_post_type('event', array(
