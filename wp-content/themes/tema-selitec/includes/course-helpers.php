@@ -77,20 +77,64 @@ function tema_selitec_course_meta_first(int $post_id, array $keys, string $defau
     return $default;
 }
 
+function tema_selitec_course_modality_options(): array
+{
+    return array(
+        'presencial' => 'Presencial',
+        'elearning' => 'E-learning',
+        'presencial-elearning' => 'Presencial - E-learning',
+        'online' => 'Online',
+    );
+}
+
+function tema_selitec_course_normalize_modality(string $value): string
+{
+    $value = strtolower(remove_accents(trim($value)));
+    $value = str_replace('_', '-', $value);
+
+    if (
+        strpos($value, 'presencial') !== false
+        && (strpos($value, 'learning') !== false || strpos($value, 'online') !== false)
+    ) {
+        return 'presencial-elearning';
+    }
+
+    if (in_array($value, array('presencial-elearning', 'presencial-e-learning', 'mixta', 'mixto'), true)) {
+        return 'presencial-elearning';
+    }
+
+    if (
+        strpos($value, 'learning') !== false
+        || strpos($value, 'distancia') !== false
+        || strpos($value, 'aula virtual') !== false
+    ) {
+        return 'elearning';
+    }
+
+    if (strpos($value, 'online') !== false || $value === 'en-linea') {
+        return 'online';
+    }
+
+    return 'presencial';
+}
+
 function tema_selitec_course_modality(int $post_id): string
 {
-    $raw = strtolower(tema_selitec_course_meta_first(
+    $raw = tema_selitec_course_meta_first(
         $post_id,
         array('modality', 'course_modality', 'st_course_modality', 'modalidad', 'selitec_modality'),
         'presencial'
-    ));
+    );
 
-    return in_array($raw, array('presencial', 'elearning'), true) ? $raw : 'presencial';
+    return tema_selitec_course_normalize_modality($raw);
 }
 
 function tema_selitec_course_modality_label(string $modality): string
 {
-    return $modality === 'elearning' ? 'E-learning' : 'Presencial';
+    $normalized = tema_selitec_course_normalize_modality($modality);
+    $options = tema_selitec_course_modality_options();
+
+    return $options[$normalized] ?? 'Presencial';
 }
 
 function tema_selitec_course_hours(int $post_id): string
@@ -122,6 +166,11 @@ function tema_selitec_course_summary(int $post_id): string
 
 function tema_selitec_course_syllabus_html(int $post_id): string
 {
+    $post = get_post($post_id);
+    if ($post instanceof WP_Post && trim((string) $post->post_content) !== '') {
+        return apply_filters('the_content', $post->post_content);
+    }
+
     $syllabus = tema_selitec_course_meta_first(
         $post_id,
         array('syllabus_html', 'course_syllabus', 'st_syllabus', 'temario_html', 'selitec_syllabus')
@@ -129,11 +178,6 @@ function tema_selitec_course_syllabus_html(int $post_id): string
 
     if ($syllabus !== '') {
         return wp_kses_post($syllabus);
-    }
-
-    $post = get_post($post_id);
-    if ($post instanceof WP_Post && trim((string) $post->post_content) !== '') {
-        return apply_filters('the_content', $post->post_content);
     }
 
     return '<p>Temario disponible bajo solicitud en contacto@selitec.cl.</p>';
@@ -145,6 +189,15 @@ function tema_selitec_course_description(int $post_id): string
         $post_id,
         array('course_description'),
         'El curso de <strong>' . esc_html(get_the_title($post_id)) . '</strong> está diseñado para entregar competencias técnicas específicas orientadas a la práctica profesional y al cumplimiento de estándares operativos.'
+    );
+}
+
+function tema_selitec_course_objectives(int $post_id): string
+{
+    return tema_selitec_course_meta_first(
+        $post_id,
+        array('course_objectives', 'objectives', 'selitec_objectives'),
+        'Al finalizar este curso, los participantes aplican técnicas y conocimientos adquiridos en su desempeño laboral bajo estándares de calidad y seguridad.'
     );
 }
 

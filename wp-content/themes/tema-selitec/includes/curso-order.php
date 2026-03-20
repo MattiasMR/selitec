@@ -84,7 +84,86 @@ function tema_selitec_ajax_update_curso_order(): void
 add_action('wp_ajax_update_curso_order', 'tema_selitec_ajax_update_curso_order');
 
 /* ---------------------------------------------------------------
- * 3) Default admin list ordering: menu_order ASC
+ * 3) Course taxonomy filter in admin list
+ * ------------------------------------------------------------- */
+function tema_selitec_course_admin_filter_taxonomy(): string
+{
+    if (taxonomy_exists('course_category') && is_object_in_taxonomy('course', 'course_category')) {
+        return 'course_category';
+    }
+
+    $taxonomies = get_object_taxonomies('course', 'objects');
+    foreach ($taxonomies as $taxonomy) {
+        if (!($taxonomy instanceof WP_Taxonomy)) {
+            continue;
+        }
+
+        if (!empty($taxonomy->show_ui)) {
+            return (string) $taxonomy->name;
+        }
+    }
+
+    return '';
+}
+
+function tema_selitec_course_admin_category_filter_dropdown(string $post_type): void
+{
+    if ($post_type !== 'course') {
+        return;
+    }
+
+    $taxonomy = tema_selitec_course_admin_filter_taxonomy();
+    if ($taxonomy === '') {
+        return;
+    }
+
+    $tax_obj = get_taxonomy($taxonomy);
+    if (!$tax_obj instanceof WP_Taxonomy) {
+        return;
+    }
+
+    $selected = isset($_GET[$taxonomy]) ? sanitize_text_field((string) wp_unslash($_GET[$taxonomy])) : '';
+
+    wp_dropdown_categories(array(
+        'show_option_all' => $tax_obj->labels->all_items ?? __('Todas las categorías', 'tema-selitec'),
+        'taxonomy'        => $taxonomy,
+        'name'            => $taxonomy,
+        'orderby'         => 'name',
+        'selected'        => $selected,
+        'show_count'      => false,
+        'hide_empty'      => false,
+        'hierarchical'    => (bool) $tax_obj->hierarchical,
+        'value_field'     => 'slug',
+    ));
+}
+add_action('restrict_manage_posts', 'tema_selitec_course_admin_category_filter_dropdown');
+
+function tema_selitec_course_admin_apply_category_filter(WP_Query $query): void
+{
+    if (!is_admin() || !$query->is_main_query()) {
+        return;
+    }
+
+    if ('course' !== $query->get('post_type')) {
+        return;
+    }
+
+    $taxonomy = tema_selitec_course_admin_filter_taxonomy();
+    if ($taxonomy === '' || !isset($_GET[$taxonomy])) {
+        return;
+    }
+
+    $selected = sanitize_text_field((string) wp_unslash($_GET[$taxonomy]));
+    if ($selected === '') {
+        return;
+    }
+
+    $query->set($taxonomy, sanitize_title($selected));
+}
+add_action('pre_get_posts', 'tema_selitec_course_admin_apply_category_filter');
+
+/* ---------------------------------------------------------------
+ * 4) Default admin list ordering: menu_order ASC
  *    Only when no explicit orderby is set by the user.
  * ------------------------------------------------------------- */
 function tema_selitec_curso_default_order(WP_Query $query): void

@@ -191,6 +191,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 .replace(/[-_]+/g, ' ')
                 .replace(/\b\w/g, char => char.toUpperCase());
 
+            const MODALITY_MAP = {
+                presencial: 'Presencial',
+                elearning: 'E-learning',
+                'presencial-elearning': 'Presencial - E-learning',
+                online: 'Online',
+            };
+
             courses.forEach(course => {
                 const card = document.createElement('article');
                 card.className = 'course-card';
@@ -199,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const badgeClass = course.categoryBadge || catInfo.badge;
                 const categoryLabel = course.categoryLabel || catInfo.label;
                 
-                const modalityLabel = course.modality === 'elearning' ? 'E-learning' : 'Presencial';
+                const modalityLabel = MODALITY_MAP[course.modality] || 'Presencial';
                 const description = (course.desc || '').trim();
                 const excerpt = description ? `${description.substring(0, 120)}...` : 'Curso técnico especializado de Selitec Capacitación.';
                 

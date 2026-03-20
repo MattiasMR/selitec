@@ -26,10 +26,7 @@ $syllabus_html = tema_selitec_course_syllabus_html($post_id);
 $pdf_url = tema_selitec_course_pdf_url($post_id);
 $description = tema_selitec_course_description($post_id);
 $summary = wp_strip_all_tags($description);
-$objectives = tema_selitec_course_meta_first($post_id, array('course_objectives', 'objectives', 'selitec_objectives'));
-if ($objectives === '') {
-    $objectives = 'Al finalizar este curso, los participantes aplican técnicas y conocimientos adquiridos en su desempeño laboral bajo estándares de calidad y seguridad.';
-}
+$objectives = tema_selitec_course_objectives($post_id);
 
 $related_courses = new WP_Query(array(
     'post_type' => 'course',

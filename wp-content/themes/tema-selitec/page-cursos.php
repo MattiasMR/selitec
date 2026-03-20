@@ -22,6 +22,15 @@ if (empty($category_options)) {
     $category_options = tema_selitec_course_category_map();
 }
 
+$modality_options = function_exists('tema_selitec_course_modality_options')
+    ? tema_selitec_course_modality_options()
+    : array(
+        'presencial' => 'Presencial',
+        'elearning' => 'E-learning',
+        'presencial-elearning' => 'Presencial - E-learning',
+        'online' => 'Online',
+    );
+
 get_header();
 ?>
 <main>
@@ -60,20 +69,15 @@ get_header();
                 <div class="filter-group">
                     <h3 class="filter-title">Modalidad</h3>
                     <ul class="filter-list" id="modality-filters">
-                        <li>
-                            <label class="checkbox-label">
-                                <input type="checkbox" value="presencial" checked>
-                                <span class="checkbox-custom"></span>
-                                Presencial
-                            </label>
-                        </li>
-                        <li>
-                            <label class="checkbox-label">
-                                <input type="checkbox" value="elearning" checked>
-                                <span class="checkbox-custom"></span>
-                                E-learning
-                            </label>
-                        </li>
+                        <?php foreach ($modality_options as $slug => $label) : ?>
+                            <li>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="<?php echo esc_attr($slug); ?>" checked>
+                                    <span class="checkbox-custom"></span>
+                                    <?php echo esc_html($label); ?>
+                                </label>
+                            </li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
         </aside>

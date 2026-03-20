@@ -3,8 +3,7 @@
  * Course meta boxes — admin fields for the "Curso" CPT.
  *
  * Allows creating/editing courses with standard fields:
- * imagen (thumbnail), categoría (taxonomy), modalidad, duración/horas,
- * título (post_title), descripción (editor), objetivos, temario, PDF.
+ * modalidad, duración/horas, descripción, objetivos y URL de temario.
  *
  * @package tema-selitec
  */
@@ -30,17 +29,31 @@ function tema_selitec_course_metaboxes(): void
 add_action('add_meta_boxes', 'tema_selitec_course_metaboxes');
 
 /**
+ * Display a clear label indicating the main editor is for "Temario".
+ */
+function tema_selitec_course_editor_syllabus_label(WP_Post $post): void
+{
+    if ($post->post_type !== 'course') {
+        return;
+    }
+
+    echo '<h2 style="margin: 12px 0 8px; font-size: 1rem;">' . esc_html__('Temario', 'tema-selitec') . '</h2>';
+}
+add_action('edit_form_after_title', 'tema_selitec_course_editor_syllabus_label');
+
+/**
  * Render the meta box fields.
  */
 function tema_selitec_course_details_render(WP_Post $post): void
 {
     wp_nonce_field('tema_selitec_course_save', 'tema_selitec_course_nonce');
 
-    $modality    = get_post_meta($post->ID, 'course_modality', true);
-    $hours       = get_post_meta($post->ID, 'course_hours', true);
+    $modality    = tema_selitec_course_modality($post->ID);
+    $hours       = tema_selitec_course_meta_first($post->ID, array('course_hours', 'hours', 'duration', 'course_duration', 'duracion', 'selitec_hours'));
     $description = get_post_meta($post->ID, 'course_description', true);
-    $syllabus    = get_post_meta($post->ID, 'syllabus_html', true);
-    $pdf         = get_post_meta($post->ID, 'pdf_url', true);
+    $objectives  = tema_selitec_course_objectives($post->ID);
+    $pdf         = tema_selitec_course_meta_first($post->ID, array('pdf_url', 'pdf', 'course_pdf', 'temario_pdf', 'selitec_pdf'));
+    $modality_options = tema_selitec_course_modality_options();
 
     ?>
     <table class="form-table"><tbody>
@@ -48,8 +61,9 @@ function tema_selitec_course_details_render(WP_Post $post): void
             <th scope="row"><label for="course_modality">Modalidad</label></th>
             <td>
                 <select id="course_modality" name="course_modality">
-                    <option value="presencial" <?php selected($modality, 'presencial'); ?>>Presencial</option>
-                    <option value="elearning" <?php selected($modality, 'elearning'); ?>>E-learning / Online</option>
+                    <?php foreach ($modality_options as $key => $label) : ?>
+                        <option value="<?php echo esc_attr($key); ?>" <?php selected($modality, $key); ?>><?php echo esc_html($label); ?></option>
+                    <?php endforeach; ?>
                 </select>
                 <p class="description">Seleccione la modalidad del curso.</p>
             </td>
@@ -65,22 +79,14 @@ function tema_selitec_course_details_render(WP_Post $post): void
             <th scope="row"><label for="course_description">Descripción del Curso</label></th>
             <td>
                 <textarea id="course_description" name="course_description" rows="5" class="large-text"><?php echo esc_textarea($description); ?></textarea>
-                <p class="description">Descripción y objetivos del curso que aparecen junto a la imagen. Si se deja vacío se usa un texto por defecto.</p>
+                <p class="description">Descripción del curso que se muestra en la ficha. Si se deja vacío se usa un texto por defecto.</p>
             </td>
         </tr>
         <tr>
-            <th scope="row"><label for="syllabus_html">Temario (HTML)</label></th>
+            <th scope="row"><label for="course_objectives">Objetivos Generales</label></th>
             <td>
-                <?php
-                wp_editor($syllabus, 'syllabus_html', array(
-                    'textarea_name' => 'syllabus_html',
-                    'textarea_rows' => 10,
-                    'media_buttons' => false,
-                    'teeny'         => false,
-                    'quicktags'     => true,
-                ));
-                ?>
-                <p class="description">Temario detallado del curso. Use listas (&lt;ul&gt;&lt;li&gt;) para los puntos del contenido. Si se deja vacío se usa el contenido principal del editor.</p>
+                <textarea id="course_objectives" name="course_objectives" rows="5" class="large-text"><?php echo esc_textarea($objectives); ?></textarea>
+                <p class="description">Objetivos generales del curso. Compatible con metas antiguas y editable desde este campo.</p>
             </td>
         </tr>
         <tr>
@@ -115,17 +121,25 @@ function tema_selitec_course_save(int $post_id): void
         return;
     }
 
-    // Text fields
-    $text_keys = array('course_modality', 'course_hours', 'course_description', 'pdf_url');
-    foreach ($text_keys as $key) {
-        if (isset($_POST[$key])) {
-            update_post_meta($post_id, $key, sanitize_text_field(wp_unslash($_POST[$key])));
-        }
+    if (isset($_POST['course_modality'])) {
+        $modality = sanitize_text_field((string) wp_unslash($_POST['course_modality']));
+        update_post_meta($post_id, 'course_modality', tema_selitec_course_normalize_modality($modality));
     }
 
-    // HTML field (syllabus) — allow safe HTML
-    if (isset($_POST['syllabus_html'])) {
-        update_post_meta($post_id, 'syllabus_html', wp_kses_post(wp_unslash($_POST['syllabus_html'])));
+    if (isset($_POST['course_hours'])) {
+        update_post_meta($post_id, 'course_hours', sanitize_text_field((string) wp_unslash($_POST['course_hours'])));
+    }
+
+    if (isset($_POST['course_description'])) {
+        update_post_meta($post_id, 'course_description', sanitize_textarea_field((string) wp_unslash($_POST['course_description'])));
+    }
+
+    if (isset($_POST['course_objectives'])) {
+        update_post_meta($post_id, 'course_objectives', sanitize_textarea_field((string) wp_unslash($_POST['course_objectives'])));
+    }
+
+    if (isset($_POST['pdf_url'])) {
+        update_post_meta($post_id, 'pdf_url', sanitize_text_field((string) wp_unslash($_POST['pdf_url'])));
     }
 }
 add_action('save_post_course', 'tema_selitec_course_save');
