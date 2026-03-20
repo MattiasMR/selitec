@@ -83,7 +83,6 @@ function tema_selitec_course_modality_options(): array
         'presencial' => 'Presencial',
         'elearning' => 'E-learning',
         'presencial-elearning' => 'Presencial - E-learning',
-        'online' => 'Online',
     );
 }
 
@@ -105,14 +104,12 @@ function tema_selitec_course_normalize_modality(string $value): string
 
     if (
         strpos($value, 'learning') !== false
+        || strpos($value, 'online') !== false
         || strpos($value, 'distancia') !== false
         || strpos($value, 'aula virtual') !== false
+        || $value === 'en-linea'
     ) {
         return 'elearning';
-    }
-
-    if (strpos($value, 'online') !== false || $value === 'en-linea') {
-        return 'online';
     }
 
     return 'presencial';

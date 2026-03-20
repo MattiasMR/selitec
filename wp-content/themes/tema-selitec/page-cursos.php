@@ -28,7 +28,6 @@ $modality_options = function_exists('tema_selitec_course_modality_options')
         'presencial' => 'Presencial',
         'elearning' => 'E-learning',
         'presencial-elearning' => 'Presencial - E-learning',
-        'online' => 'Online',
     );
 
 get_header();

@@ -25,7 +25,7 @@ get_header();
                 <p class="section-subtitle" style="margin: 0 auto;">Hemos capacitado a equipos de múltiples industrias en todo Chile.</p>
             </div>
 
-            <div style="display:grid; grid-template-columns: repeat(auto-fill,minmax(150px,1fr)); gap:2rem; align-items:center; justify-items:center; margin-top:2rem;">
+            <div class="clients-grid-page">
                 <?php foreach ($logo_files as $logo_file) : ?>
                     <?php
                     $basename = basename($logo_file);
@@ -33,8 +33,8 @@ get_header();
                     $alt = str_replace(array('_', '-'), ' ', $alt);
                     $relative = str_replace(TEMA_SELITEC_DIR . '/', '', $logo_file);
                     ?>
-                    <div style="display:flex; align-items:center; justify-content:center; width:100%; height:120px; padding:1rem; border:1px solid var(--c-border); border-radius:var(--radius-md); background:white;">
-                        <img src="<?php echo esc_url(tema_selitec_asset_url($relative)); ?>" alt="<?php echo esc_attr(ucwords($alt)); ?>" loading="lazy" style="max-width:100%; max-height:100%; object-fit:contain; filter:grayscale(100%);">
+                    <div class="client-logo-item">
+                        <img src="<?php echo esc_url(tema_selitec_asset_url($relative)); ?>" alt="<?php echo esc_attr(ucwords($alt)); ?>" loading="lazy">
                     </div>
                 <?php endforeach; ?>
             </div>

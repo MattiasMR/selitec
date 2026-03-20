@@ -166,6 +166,12 @@ document.addEventListener('DOMContentLoaded', () => {
             return themeUrl ? themeUrl + img.replace('../', '') : img;
         };
         const resolveLink  = (slug) => homeUrl ? homeUrl + 'curso/' + slug + '/' : '../curso/' + slug + '/';
+        const normalizeModality = (value = '') => (String(value).toLowerCase() === 'online' ? 'elearning' : value);
+        const MODALITY_MAP = {
+            presencial: 'Presencial',
+            elearning: 'E-learning',
+            'presencial-elearning': 'Presencial - E-learning',
+        };
 
         const renderCourses = (courses) => {
             coursesGrid.innerHTML = '';
@@ -191,13 +197,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 .replace(/[-_]+/g, ' ')
                 .replace(/\b\w/g, char => char.toUpperCase());
 
-            const MODALITY_MAP = {
-                presencial: 'Presencial',
-                elearning: 'E-learning',
-                'presencial-elearning': 'Presencial - E-learning',
-                online: 'Online',
-            };
-
             courses.forEach(course => {
                 const card = document.createElement('article');
                 card.className = 'course-card';
@@ -206,7 +205,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const badgeClass = course.categoryBadge || catInfo.badge;
                 const categoryLabel = course.categoryLabel || catInfo.label;
                 
-                const modalityLabel = MODALITY_MAP[course.modality] || 'Presencial';
+                const modalityKey = normalizeModality(course.modality);
+                const modalityLabel = MODALITY_MAP[modalityKey] || 'Presencial';
                 const description = (course.desc || '').trim();
                 const excerpt = description ? `${description.substring(0, 120)}...` : 'Curso técnico especializado de Selitec Capacitación.';
                 
@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                       desc.includes(searchInput) ||
                                       shortTitle.includes(searchInput);
                 const matchesCategory = selectedCategories.includes(course.category);
-                const matchesModality = selectedModalities.includes(course.modality);
+                const matchesModality = selectedModalities.includes(normalizeModality(course.modality));
                 
                 return matchesSearch && matchesCategory && matchesModality;
             });

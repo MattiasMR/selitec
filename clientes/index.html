@@ -37,10 +37,13 @@
             border: 1px solid var(--c-border);
             border-radius: var(--radius-md);
             background: white;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: var(--shadow-sm);
+            transform: translateY(0) scale(1);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
         }
         .client-logo-item:hover {
-            transform: translateY(-5px);
+            border-color: var(--c-primary);
+            transform: translateY(-4px) scale(1.04);
             box-shadow: var(--shadow-md);
         }
         .client-logo-item img {
@@ -48,7 +51,7 @@
             max-height: 100%;
             object-fit: contain;
             filter: grayscale(100%);
-            transition: filter 0.2s ease;
+            transition: filter 0.3s;
         }
         .client-logo-item:hover img {
             filter: grayscale(0%);
