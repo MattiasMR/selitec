@@ -4,7 +4,6 @@ dist
 .env
 
 *.md
-!AGENTS.md
 *.pdf
 *.txt
 *.xlsx

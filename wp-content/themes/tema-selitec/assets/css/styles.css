@@ -1074,6 +1074,16 @@ ul {
     border-radius: var(--radius-md);
 }
 
+.schedule-card {
+    margin-bottom: var(--sp-lg);
+}
+
+.schedule-card__title {
+    font-size: 1.4rem;
+    color: var(--c-primary);
+    margin: 0 0 var(--sp-sm);
+}
+
 .schedule-table {
     width: 100%;
     border-collapse: collapse;
@@ -1119,6 +1129,13 @@ ul {
     font-size: 0.9rem;
     color: var(--c-text-muted);
     font-style: italic;
+}
+
+.schedule-commercial {
+    margin: 1.5rem 0 0;
+    text-align: center;
+    font-weight: 700;
+    color: var(--c-primary);
 }
 
 /* =========================================

@@ -1,171 +1,201 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.selitec.mattias.cl/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1</priority>
+    <loc>https://selitec.cl/evento/gruas-horquilla/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/cursos/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <loc>https://selitec.cl/evento/operacion-de-autoclaves-caldera-de-calefaccion-e-industrial-30-horas-elearning/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/programacion/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://selitec.cl/evento/procedimientos-para-el-uso-de-microsoft-excel-nivel-intermedio/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/nivelacion/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://selitec.cl/evento/tecnicas-soldadura-al-arco-electrico-40-horas-presencial/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/empresa/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://selitec.cl/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/contacto/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://selitec.cl/javascript/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/curso/operacion-calderas-termofluido/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://selitec.cl/home/programa-mensual/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/curso/metrologia-ajustes-tolerancias/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://selitec.cl/inscripcion/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/curso/manejo-operacion-autoclave/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://selitec.cl/home/empresa/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/curso/tecnica-maniobra-rigger/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://selitec.cl/mantencion-y-produccion/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/curso/prevencion-riesgos-operacionales/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://selitec.cl/computacion/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/curso/gasfiteria-instalaciones-sanitarias/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://selitec.cl/home/habilidades-blandas/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/curso/operacion-transpaleta-electrica/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://selitec.cl/idiomas/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/curso/mecanica-mantencion-equipos-industriales/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://selitec.cl/todos-los-cursos/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/curso/interpretacion-planos-electricos/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://selitec.cl/home/nivelacion/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/curso/instalacion-reparaciones-electricas/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://selitec.cl/home/nuestros-clientes/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/curso/neumatica-aplicada/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://selitec.cl/home/noticias-y-eventos/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/curso/interpretacion-planos-mecanicos/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://selitec.cl/home/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/curso/operador-caldera-completo/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://selitec.cl/home/contacto/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/curso/operacion-gruas-horquillas/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://selitec.cl/programa-mensual-2/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/curso/metrologia-mecanica-industrial/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://selitec.cl/empresa/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/curso/administracion-bodegas/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://selitec.cl/contacto/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/curso/administracion-bodegas-2/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://selitec.cl/clientes/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/curso/excel-basico/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://selitec.cl/nivelacion/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/curso/excel-avanzado/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://selitec.cl/programacion/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/curso/tecnicas-desarrollo-equipos-trabajo/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://selitec.cl/certificaciones/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/curso/administracion-tiempo-control-tareas/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://selitec.cl/cursos/</loc>
   </url>
   <url>
-    <loc>https://www.selitec.mattias.cl/curso/espanol-basico-integracion-laboral/</loc>
-    <lastmod>2026-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://selitec.cl/cursos/categoria/computacion/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/cursos/categoria/mantencion/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/cursos/categoria/maquinas/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/cursos/categoria/seguridad/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/metrologia-ajustes-y-tolerancias/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/operacion-de-autoclaves-caldera-de-calefaccion-e-industrial/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/tecnicas-de-operacion-de-autoclaves/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/operacion-de-calderas-de-termo-fluido/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/excel-basico/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/excel-intermedio/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/excel-avanzado/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/tecnicas-de-soldadura-tig-mig/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/soldadura-al-arco/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/tecnicas-de-mecanica-mantencion-maquinas-y-equipos-industriales/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/instalaciones-electricas-domiciliarias/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/administracion-de-bodegas/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/hidraulica-industrial/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/neumatica-basica/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/operacion-y-mantencion-de-gruas-horquillas/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/operacion-y-mantencion-de-apiladores-electricos/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/tecnicas-de-operacion-de-alza-hombre-y-trabajo-en-altura/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/tecnicas-de-operacion-y-mantencion-de-puente-grua/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/operacion-y-mantencion-transpaleta-electrica/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/tecnicas-de-operacion-y-mantencion-de-cargador-frontal/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/operacion-y-mantencion-de-minicarador/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/operacion-de-camion-ampliroll/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/operacion-y-mantencion-de-retroexcavadoras/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/rigger/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/tecnicas-de-seguridad-en-trabajo-de-altura/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/primeros-auxilios-para-el-manejo-de-traumas-y-urgencias-en-el-entorno-laboral/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/uso-y-manejo-de-extintores/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/buenas-practicas-de-manufactura-bpm/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/food-defense/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/trabajo-en-espacios-confinados/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/entrenamiento-de-brigadas-de-emergencia/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/tecnicas-para-el-manejo-de-residuos-peligrosos/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/tecnicas-para-la-prevencion-de-riesgos-electricos/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/operacion-de-extintores-portatiles/</loc>
+  </url>
+  <url>
+    <loc>https://selitec.cl/curso/tecnicas-de-prevencion-de-riesgos-laborales-autocuidado-y-seguridad/</loc>
   </url>
 </urlset>

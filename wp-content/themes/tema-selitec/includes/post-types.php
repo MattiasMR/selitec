@@ -43,7 +43,7 @@ function tema_selitec_register_post_types(): void
         'menu_icon'    => 'dashicons-calendar-alt',
         'rewrite'      => array('slug' => 'evento', 'with_front' => false),
         'has_archive'  => false,
-        'supports'     => array('title', 'editor', 'excerpt', 'thumbnail', 'revisions'),
+        'supports'     => array('title', 'excerpt', 'thumbnail', 'revisions'),
     ));
 }
 add_action('init', 'tema_selitec_register_post_types');
